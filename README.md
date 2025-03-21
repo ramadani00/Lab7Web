@@ -19,7 +19,7 @@
   <tr>
     <td><b>Praktikum 2</b></td>
     <td>Framework Lanjutan (CRUD)</td>
-    <td><a href="">Klik disini</td>
+    <td><a href="https://github.com/diniramadani/Lab7Web/tree/main/Praktikum_2">Klik disini</td>
   </tr>
   <tr>
     <td><b>Praktikum 3</b></td>
