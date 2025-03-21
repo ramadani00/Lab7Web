@@ -8,7 +8,28 @@
 | <b> Matakuliah   | Pemrograman Web 2      |
 |  | |
 
+ # DAFTAR TUGAS PRAKTIKUM
+
+<table border="2" cellpading="10">
+  <tr>
+    <td><b>Praktikum 1</b></td>
+    <td> PHP Framework (Codeigniter)</td>
+    <td><a href="">Klik disini</td>
+  </tr>
+  <tr>
+    <td><b>Praktikum 2</b></td>
+    <td>Framework Lanjutan (CRUD)</td>
+    <td><a href="">Klik disini</td>
+  </tr>
+  <tr>
+    <td><b>Praktikum 3</b></td>
+    <td>View Layout dan View Cell</td>
+    <td><a href="">Klik disini</td>
+  </tr>
+</table>_________________________________________________________________________________
+_________________________________________________________________________________
 <div id="p11">
+
 
 # <spaan style="color: blue">Praktikum 1 | PHP Framework (Codeigniter)</span>
 
