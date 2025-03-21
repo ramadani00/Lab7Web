@@ -14,7 +14,7 @@
   <tr>
     <td><b>Praktikum 1</b></td>
     <td> PHP Framework (Codeigniter)</td>
-    <td><a href="">Klik disini</td>
+    <td><a href="https://github.com/diniramadani/Lab7Web/tree/main/Praktikum_1">Klik disini</td>
   </tr>
   <tr>
     <td><b>Praktikum 2</b></td>
