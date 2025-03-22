@@ -94,9 +94,6 @@ php spark
 
 ![img9](assets/img/konfigurasi_ci.png)
 
-- Refresh url sebelumnya, Berikut tampilan error nya.
-
-![img10](assets/img/ci_error.png)
 
 ## Struktur Direktori
 
