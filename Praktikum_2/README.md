@@ -17,34 +17,34 @@ Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah datab
         PRIMARY KEY(id)
     );
     ```
-![img27](assets/img/create_table.PNG)
+![img1](assets/img/create_table.png)
 <br>
 
 ## 2. Konfigurasi Koneksi Database
 Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan du acara, yaitu pada file app/config/database.php atau menggunakan  file .env. 
 - Terletak di folder ``ci4``, file `.env`, Hapus tanda `#`.
-![img27](assets/img/koneksi_db.PNG)
+![img2](assets/img/koneksi_db.png)
 <br>
 
 ## 3. Membuat Model 
 Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada direktori app/Models dengan nama ArtikelModel.php
 - Terletak di folder `app/Models`, buat file `ArtikelModel.php`.
-![img27](assets/img/membuat_model.PNG)
+![img3](assets/img/membuat_model.png)
 <br>
 
 ## 4. Membuat Controller 
 Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 - Terletak di folder `app/Controllers`, buat file `Artikel.php`.
-![img27](assets/img/membuat_controller.PNG)
+![img4](assets/img/membuat_controller.png)
 <br>
 
 ## 5. Membuat View pada artikel 
 Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file baru dengan nama index.php. 
 - Terletak di folder `app/Views/artikel`, buat file `index.php`.
-![img27](assets/img/view_artikel.PNG)
+![img5](assets/img/view_artikel.png)
 <br>
 - Selanjutnya buka browser kembali, dengan mengakses url http://localhost:8080/artikel
-![img32](assets/img/view_artikelkosong.PNG)
+![img6](assets/img/view_artikelkosong.png)
 <br>
 
 - Masukkan data ke tabel artikel,
