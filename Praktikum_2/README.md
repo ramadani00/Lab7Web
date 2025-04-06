@@ -121,17 +121,50 @@ Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat 
 ## 6. Membuat Tampilan detail Artikel
 Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Tambahkan fungsi baru pada Controller Artikel dengan nama view().
 - Terletak di folder `app/Controllers`, edit file `Artikel.php`. Tambah method ``view()``.
-![img9](assets/img/12.9.PNG)
+```php
+public function view($slug)
+    {
+        $model = new ArtikelModel();
+        $artikel = $model->where([
+            'slug' => $slug
+        ])->first();
+        // Menampilkan error apabila data tidak ada.
+        if (!$artikel) 
+        {
+            throw PageNotFoundException::forPageNotFound();
+        }
+        $title = $artikel['judul'];
+        return view('artikel/detail', compact('artikel', 'title'));
+    }
+```
+  
+![img9](assets/img/detail_artikel.png)
 <br>
 
 ## 7. Membuat View pada Detail
 - Terletak di folder `app/Views/artikel`, buat file `detail.php`.
-![img36](assets/img/12.10.PNG)
+```php
+<?= $this->include('template/header'); ?>
+
+<article class="entry">
+    <h2><?= $artikel['judul']; ?></h2>
+    <img src="<?= base_url('/gambar/' . $artikel['gambar']); ?>" alt="<?= $artikel['judul']; ?>">
+    <p><?= $artikel['isi']; ?></p>
+</article>
+
+<?= $this->include('template/footer'); ?>
+```
+  
+![img10](assets/img/detail_php.png)
 <br>
 
 ## 8. Membuat Routing untuk artikel detail
 - Terletak di folder `app/Config`, edit file `Routes.php`.
-![img36-2](assets/img/12.11.PNG)
+```php
+$routes->get('/artikel/(:any)', 'Artikel::view/$1');
+```
+  
+![img11](assets/img/artikelkedua.png)
 <br>
 
 - Klik `Artikel Kedua` pada http://localhost:8080/artikel, untuk pindah ke detailnya.
