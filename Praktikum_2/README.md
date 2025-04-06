@@ -7,7 +7,6 @@ Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah datab
 - Jalankan ``Apache, MySql`` pada Xampp, Buat database dengan nama ``lab_ci4`` di http://localhost/phpmyadmin.
 - Buat tabel dengan nama ``artikel``.
     ```
-    sql
     CREATE TABLE artikel (
         id INT(11) auto_increment,
         judul VARCHAR(200) NOT NULL,
