@@ -41,7 +41,8 @@ Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pa
   protected $primaryKey = 'id';
   protected $useAutoIncrement = true;
   protected $allowedFields = ['judul', 'isi', 'status', 'slug', 'gambar'];
-  }```
+  }
+  ```
 
 ![img3](assets/img/membuat_model.png)
 <br>
@@ -49,7 +50,7 @@ Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pa
 ## 4. Membuat Controller 
 Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 - Terletak di folder `app/Controllers`, buat file `Artikel.php`.
-  ```
+  ```php
   <?php
   namespace App\Controllers;
   use App\Models\ArtikelModel;
@@ -69,7 +70,7 @@ Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 ## 5. Membuat View pada artikel 
 Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file baru dengan nama index.php. 
 - Terletak di folder `app/Views/artikel`, buat file `index.php`.
-  ```
+  ```php
   <?= $this->include('template/header'); ?>
   <?php if($artikel): foreach($artikel as $row): ?>
   <article class="entry">
@@ -86,7 +87,8 @@ Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat 
     <h2>Belum ada data.</h2>
   </article>
   <?php endif; ?>
-  <?= $this->include('template/footer'); ?>```
+  <?= $this->include('template/footer'); ?>
+  ```
 
 ![img5](assets/img/view_artikel.png)
 <br>
