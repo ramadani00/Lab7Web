@@ -167,10 +167,6 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 ![img11](assets/img/artikelkedua.png)
 <br>
 
-- Klik `Artikel Kedua` pada http://localhost:8080/artikel, untuk pindah ke detailnya.
-![img37](assets/img/12.12.PNG)
-<br>
-
 ## 9. Membuat Menu admin
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `admin_index()`.
 ![img38](assets/img/12.13.PNG)
