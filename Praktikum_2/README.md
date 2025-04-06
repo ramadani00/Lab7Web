@@ -6,7 +6,8 @@ Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah datab
 ## 1. Membuat Database
 - Jalankan ``Apache, MySql`` pada Xampp, Buat database dengan nama ``lab_ci4`` di http://localhost/phpmyadmin.
 - Buat tabel dengan nama ``artikel``.
-    ```sql
+    ```
+    sql
     CREATE TABLE artikel (
         id INT(11) auto_increment,
         judul VARCHAR(200) NOT NULL,
@@ -33,16 +34,15 @@ Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pa
 - Terletak di folder `app/Models`, buat file `ArtikelModel.php`.
   ```
   <?php
-namespace App\Models;
-use CodeIgniter\Model;
-class ArtikelModel extends Model
-{
- protected $table = 'artikel';
- protected $primaryKey = 'id';
- protected $useAutoIncrement = true;
- protected $allowedFields = ['judul', 'isi', 'status', 'slug', 'gambar'];
-}
-    ```
+  namespace App\Models;
+  use CodeIgniter\Model;
+  class ArtikelModel extends Model
+  {
+  protected $table = 'artikel';
+  protected $primaryKey = 'id';
+  protected $useAutoIncrement = true;
+  protected $allowedFields = ['judul', 'isi', 'status', 'slug', 'gambar'];
+  }```
 
 ![img3](assets/img/membuat_model.png)
 <br>
@@ -51,11 +51,11 @@ class ArtikelModel extends Model
 Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 - Terletak di folder `app/Controllers`, buat file `Artikel.php`.
   ```
-<?php
-namespace App\Controllers;
-use App\Models\ArtikelModel;
-class Artikel extends BaseController
-{
+  <?php
+  namespace App\Controllers;
+  use App\Models\ArtikelModel;
+  class Artikel extends BaseController
+  {
     public function index() 
     {
         $title = 'Daftar Artikel';
@@ -72,23 +72,22 @@ Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat 
 - Terletak di folder `app/Views/artikel`, buat file `index.php`.
   ```
   <?= $this->include('template/header'); ?>
-<?php if($artikel): foreach($artikel as $row): ?>
-<article class="entry">
+  <?php if($artikel): foreach($artikel as $row): ?>
+  <article class="entry">
     <h2<a href="<?= base_url('/artikel/' . $row['slug']);?>"><?=
     $row['judul']; ?></a>
     </h2>
     <img src="<?= base_url('/gambar/' . $row['gambar']);?>" alt="<?=
     $row['judul']; ?>">
     <p><?= substr($row['isi'], 0, 200); ?></p>
-</article>
-<hr class="divider" />
-<?php endforeach; else: ?>
-<article class="entry">
+  </article>
+  <hr class="divider" />
+  <?php endforeach; else: ?>
+  <article class="entry">
     <h2>Belum ada data.</h2>
-</article>
-<?php endif; ?>
-<?= $this->include('template/footer'); ?>
-```
+  </article>
+  <?php endif; ?>
+  <?= $this->include('template/footer'); ?>```
 
 ![img5](assets/img/view_artikel.png)
 <br>
