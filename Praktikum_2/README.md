@@ -65,17 +65,19 @@ Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat 
     teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari 
     era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih 
     dari 2000 tahun.', 'artikel-kedua');
-    ``` 
-![img33](assets/img/12.7.PNG)
+    ```
+    
+![img7](assets/img/insert_artikel.png)
 <br>
 
 - Refresh kembali browser.
-![img34](assets/img/12.8.PNG)
+![img8](assets/img/artikel.png)
 <br>
 
 ## 6. Membuat Tampilan detail Artikel
+Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Tambahkan fungsi baru pada Controller Artikel dengan nama view().
 - Terletak di folder `app/Controllers`, edit file `Artikel.php`. Tambah method ``view()``.
-![img35](assets/img/12.9.PNG)
+![img9](assets/img/12.9.PNG)
 <br>
 
 ## 7. Membuat View pada Detail
