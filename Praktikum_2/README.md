@@ -31,6 +31,18 @@ Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konf
 ## 3. Membuat Model 
 Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada direktori app/Models dengan nama ArtikelModel.php
 - Terletak di folder `app/Models`, buat file `ArtikelModel.php`.
+  ```
+  <?php
+namespace App\Models;
+use CodeIgniter\Model;
+class ArtikelModel extends Model
+{
+ protected $table = 'artikel';
+ protected $primaryKey = 'id';
+ protected $useAutoIncrement = true;
+ protected $allowedFields = ['judul', 'isi', 'status', 'slug', 'gambar'];
+}
+    ```
 
 ![img3](assets/img/membuat_model.png)
 <br>
@@ -38,14 +50,46 @@ Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pa
 ## 4. Membuat Controller 
 Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 - Terletak di folder `app/Controllers`, buat file `Artikel.php`.
-  
+  ```
+<?php
+namespace App\Controllers;
+use App\Models\ArtikelModel;
+class Artikel extends BaseController
+{
+    public function index() 
+    {
+        $title = 'Daftar Artikel';
+        $model = new ArtikelModel();
+        $artikel = $model->findAll();
+        return view('artikel/index', compact('artikel', 'title'));
+    }
+  ```
 ![img4](assets/img/membuat_controller.png)
 <br>
 
 ## 5. Membuat View pada artikel 
 Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file baru dengan nama index.php. 
 - Terletak di folder `app/Views/artikel`, buat file `index.php`.
-  
+  ```
+  <?= $this->include('template/header'); ?>
+<?php if($artikel): foreach($artikel as $row): ?>
+<article class="entry">
+    <h2<a href="<?= base_url('/artikel/' . $row['slug']);?>"><?=
+    $row['judul']; ?></a>
+    </h2>
+    <img src="<?= base_url('/gambar/' . $row['gambar']);?>" alt="<?=
+    $row['judul']; ?>">
+    <p><?= substr($row['isi'], 0, 200); ?></p>
+</article>
+<hr class="divider" />
+<?php endforeach; else: ?>
+<article class="entry">
+    <h2>Belum ada data.</h2>
+</article>
+<?php endif; ?>
+<?= $this->include('template/footer'); ?>
+```
+
 ![img5](assets/img/view_artikel.png)
 <br>
 - Selanjutnya buka browser kembali, dengan mengakses url http://localhost:8080/artikel
