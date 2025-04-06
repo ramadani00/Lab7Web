@@ -31,7 +31,7 @@ Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konf
 ## 3. Membuat Model 
 Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada direktori app/Models dengan nama ArtikelModel.php
 - Terletak di folder `app/Models`, buat file `ArtikelModel.php`.
-  ```
+  ```php
   <?php
   namespace App\Models;
   use CodeIgniter\Model;
