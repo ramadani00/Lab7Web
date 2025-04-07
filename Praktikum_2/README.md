@@ -31,6 +31,7 @@ Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konf
 ## 3. Membuat Model 
 Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada direktori app/Models dengan nama ArtikelModel.php
 - Terletak di folder `app/Models`, buat file `ArtikelModel.php`.
+  
   ```php
   <?php
   namespace App\Models;
@@ -50,6 +51,7 @@ Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pa
 ## 4. Membuat Controller 
 Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 - Terletak di folder `app/Controllers`, buat file `Artikel.php`.
+
   ```php
   <?php
   namespace App\Controllers;
@@ -70,6 +72,7 @@ Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 ## 5. Membuat View pada artikel 
 Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file baru dengan nama index.php. 
 - Terletak di folder `app/Views/artikel`, buat file `index.php`.
+  
   ```php
   <?= $this->include('template/header'); ?>
   <?php if($artikel): foreach($artikel as $row): ?>
@@ -115,6 +118,7 @@ Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat 
 <br>
 
 - Refresh kembali browser.
+  
 ![img8](assets/img/artikel.png)
 <br>
 
@@ -173,6 +177,7 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 <br>
 
 - Selanjutnya, akses kembali folder `app/Views/artikel`, buat file `admin_index.php`.
+  
     ```php
     <?= $this->include('template/admin_header'); ?>
     <table class="table table-bordered table-hover">
@@ -221,51 +226,182 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 
 - Buka folder yang ada di ``app/Views/artikel/template``, kemudian buat:
 - ``admin_header.php``,
-![img38-1](assets/img/12.15.PNG)
+ ```php
+ <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title><?= $title; ?></title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="<?= base_url('/style.css');?>">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h1>Admin Portal Berita</h1>
+            </header>
+            <nav>
+                <a href="<?= base_url('/admin_index');?>" class="active">Dashboard</a>
+                <a href="<?= base_url('/artikel');?>">Artikel</a>
+                <a href="<?= base_url('/add');?>">Tambah Artikel</a>
+            </nav>
+            <section id="wrapper">
+                <section id="main">
+```
+
+![img38-1](assets/img/admin_header.png)
 <br>
 
 - ``admin_footer.php``
-![img38-2](assets/img/12.16.PNG)
+  ```php
+                  </section>
+            </section>
+            <footer>
+                <p>&copy; 2022 - Universitas Pelita Bangsa</p>
+            </footer>
+        </div>
+    </body>
+  </html>
+  ```
+
+![img38-2](assets/img/admin_footer.png)
 <br>
 
 ## 10. Membuat Routing untuk menu admin
 - Terletak di folder `app/Config`, edit file `Routes.php`.
-![img39](assets/img/12.17.PNG)
+  
+![img39](assets/img/routes_admin.png)
 <br>
 
 - Akses browser dengan http://localhost:8080/admin/artikel.
-![img40](assets/img/12.18.PNG)
+  
+![img40](assets/img/admin_artikel.png)
 <br>
 
 ## 11. Menambah data untuk Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `add()`.
-![img41](assets/img/12.19.PNG)
+
+```php
+public function add() 
+    {
+        // validasi data.
+        $validation = \Config\Services::validation();
+        $validation->setRules(['judul' => 'required']);
+        $isDataValid = $validation->withRequest($this->request)->run();
+
+        if ($isDataValid)
+        {
+            $artikel = new ArtikelModel();
+            $artikel->insert([
+                'judul' => $this->request->getPost('judul'),
+                'isi' => $this->request->getPost('isi'),
+                'slug' => url_title($this->request->getPost('judul')),
+            ]);
+            return redirect('admin/artikel');
+        }
+        $title = "Tambah Artikel";
+        return view('artikel/form_add', compact('title'));
+    }
+```
+![img41](assets/img/controller_add.png)
 <br>
 
 - Akses kembali folder `app/Views/artikel`, buat file `form_add.php`.
-![img42](assets/img/12.20.PNG)
+
+```php
+<?= $this->include('template/admin_header'); ?>
+
+<h2><?= $title; ?></h2>
+
+<form action="" method="post">
+    <p><input type="text" name="judul" class="form-control" placeholder="Judul"></p>
+    <p><textarea name="isi" cols="50" rows="10" class="form-control" placeholder="Isi"></textarea></p>
+    <p>
+        <input type="submit" value="Kirim" class="btn btn-primary btn-lg">
+    </p>
+</form>
+
+<?= $this->include('template/admin_footer'); ?>
+```
+
+![img42](assets/img/addphp.png)
 <br>
 
 - Akses browser dengan http://localhost:8080/admin/artikel/add.
-![img43](assets/img/12.21.PNG)
+![img43](assets/img/view_add.png)
 <br>
 
 ## 12. Mengubah data pada Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `edit()`.
-![img44](assets/img/12.22.PNG)
+```php
+public function edit($id) 
+    {
+        $artikel = new ArtikelModel();
+
+        // validasi data.
+        $validation = \Config\Services::validation();
+        $validation->setRules(['judul' => 'required']);
+        $isDataValid = $validation->withRequest($this->request)->run();
+
+        if ($isDataValid)
+        {
+            $artikel->update($id, [
+                'judul' => $this->request->getPost('judul'),
+                'isi' => $this->request->getPost('isi'),
+            ]);
+            return redirect('admin/artikel');
+        }
+        
+        // ambil data lama
+        $data = $artikel->where('id', $id)->first();
+        $title = "Edit Artikel";
+        return view('artikel/form_edit', compact('title', 'data'));
+    }
+```
+
+![img44](assets/img/controller_edit.png)
 <br>
 
 - Akses kembali folder `app/Views/artikel`, buat file `form_edit.php`.
-![img45](assets/img/12.23.PNG)
+```php
+<?= $this->include('template/admin_header'); ?>
+
+<h2><?= $title; ?></h2>
+
+<form action="" method="post">
+    <p><input type="text" name="judul" class="form-control"  value="<?= $data['judul'];?>" ></p>
+    <p>
+        <textarea name="isi" id="isi" rows="10" style="width: 600px;" class="form-control"><?= $data['isi']; ?></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Kirim" class="btn btn-primary btn-lg">
+    </p>
+</form>
+
+<?= $this->include('template/admin_footer'); ?>
+```
+
+![img45](assets/img/editphp.png)
 <br>
 
 - Akses browser dengan http://localhost:8080/admin/artikel/edit/1 untuk Mengubah artikel pertama.
-![img46](assets/img/12.24.PNG)
+  
+![img46](assets/img/edit_view.png)
 <br>
 
 ## 13. Menghapus data pada Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `delete()`.
-![img47](assets/img/12.25.PNG)
+```php
+ public function delete($id) 
+    {
+        $artikel = new ArtikelModel();
+        $artikel->delete($id);
+        return redirect('admin/artikel');
+    }
+```
+
+![img47](assets/img/controller_delete.png)
 <br>
 
 - Akses browser dengan http://localhost:8080/admin/artikel/add untuk membuat artikel ketiga, lalu `kirim`.
