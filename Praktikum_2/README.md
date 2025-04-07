@@ -434,6 +434,7 @@ public function edit($id)
 <br>
 
 - Artikel berhasil dihapus.
+  
 ![img28](assets/img/view_delete2.png)
 
 <div id="p13">
