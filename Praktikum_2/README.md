@@ -348,7 +348,7 @@ public function add()
 
 - Akses browser dengan http://localhost:8080/admin/artikel/add untuk membuat artikel ketiga, lalu `kirim`.
 
-![img25](assets/img/wiew_add.png)
+![img25](assets/img/view_add.png)
 <br>
 
 - Untuk mengeceknya ketik di url, http://localhost:8080/artikel kemudian enter.
