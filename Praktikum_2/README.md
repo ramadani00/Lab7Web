@@ -6,6 +6,7 @@ Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah datab
 ## 1. Membuat Database
 - Jalankan ``Apache, MySql`` pada Xampp, Buat database dengan nama ``lab_ci4`` di http://localhost/phpmyadmin.
 - Buat tabel dengan nama ``artikel``.
+  
     ```sql
     CREATE TABLE artikel (
         id INT(11) auto_increment,
@@ -101,6 +102,7 @@ Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat 
 <br>
 
 - Masukkan data ke tabel artikel,
+  
     ```sql
     INSERT INTO artikel (judul, isi, slug) VALUE
     ('Artikel pertama', 'Lorem Ipsum adalah contoh teks atau dummy dalam industri 
@@ -125,6 +127,7 @@ Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat 
 ## 6. Membuat Tampilan detail Artikel
 Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Tambahkan fungsi baru pada Controller Artikel dengan nama view().
 - Terletak di folder `app/Controllers`, edit file `Artikel.php`. Tambah method ``view()``.
+  
 ```php
 public function view($slug)
     {
@@ -147,6 +150,7 @@ public function view($slug)
 
 ## 7. Membuat View pada Detail
 - Terletak di folder `app/Views/artikel`, buat file `detail.php`.
+  
 ```php
 <?= $this->include('template/header'); ?>
 
@@ -164,6 +168,7 @@ public function view($slug)
 
 ## 8. Membuat Routing untuk artikel detail
 - Terletak di folder `app/Config`, edit file `Routes.php`.
+  
 ```php
 $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 ```
@@ -173,7 +178,18 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 
 ## 9. Membuat Menu admin
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `admin_index()`.
-![img38](assets/img/12.13.PNG)
+  
+```php
+public function admin_index() 
+    {
+        $title = 'Daftar Artikel';
+        $model = new ArtikelModel();
+        $artikel = $model->findAll();
+        return view('artikel/admin_index', compact('artikel', 'title'));
+    }
+```
+
+![img12](assets/img/admin_index.png)
 <br>
 
 - Selanjutnya, akses kembali folder `app/Views/artikel`, buat file `admin_index.php`.
@@ -222,6 +238,8 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
     </table>
     <?= $this->include('template/admin_footer'); ?>
     ```
+
+![img13](assets/img/admin_indexphp.png)
 <br>
 
 - Buka folder yang ada di ``app/Views/artikel/template``, kemudian buat:
@@ -250,7 +268,7 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
                 <section id="main">
 ```
 
-![img38-1](assets/img/admin_header.png)
+![img14](assets/img/admin_header.png)
 <br>
 
 - ``admin_footer.php``
@@ -265,18 +283,18 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
   </html>
   ```
 
-![img38-2](assets/img/admin_footer.png)
+![img15](assets/img/admin_footer.png)
 <br>
 
 ## 10. Membuat Routing untuk menu admin
 - Terletak di folder `app/Config`, edit file `Routes.php`.
   
-![img39](assets/img/routes_admin.png)
+![img16](assets/img/routes_admin.png)
 <br>
 
 - Akses browser dengan http://localhost:8080/admin/artikel.
   
-![img40](assets/img/admin_artikel.png)
+![img17](assets/img/admin_artikel.png)
 <br>
 
 ## 11. Menambah data untuk Artikel
@@ -304,7 +322,7 @@ public function add()
         return view('artikel/form_add', compact('title'));
     }
 ```
-![img41](assets/img/controller_add.png)
+![img18](assets/img/controller_add.png)
 <br>
 
 - Akses kembali folder `app/Views/artikel`, buat file `form_add.php`.
@@ -325,11 +343,17 @@ public function add()
 <?= $this->include('template/admin_footer'); ?>
 ```
 
-![img42](assets/img/addphp.png)
+![img19](assets/img/addphp.png)
 <br>
 
-- Akses browser dengan http://localhost:8080/admin/artikel/add.
-![img43](assets/img/view_add.png)
+- Akses browser dengan http://localhost:8080/admin/artikel/add untuk membuat artikel ketiga, lalu `kirim`.
+
+![img25](assets/img/wiew_add.png)
+<br>
+
+- Untuk mengeceknya ketik di url, http://localhost:8080/artikel kemudian enter.
+  
+![img26](assets/img/view_add2.png)
 <br>
 
 ## 12. Mengubah data pada Artikel
@@ -360,7 +384,7 @@ public function edit($id)
     }
 ```
 
-![img44](assets/img/controller_edit.png)
+![img21](assets/img/controller_edit.png)
 <br>
 
 - Akses kembali folder `app/Views/artikel`, buat file `form_edit.php`.
@@ -382,12 +406,12 @@ public function edit($id)
 <?= $this->include('template/admin_footer'); ?>
 ```
 
-![img45](assets/img/editphp.png)
+![img22](assets/img/editphp.png)
 <br>
 
 - Akses browser dengan http://localhost:8080/admin/artikel/edit/1 untuk Mengubah artikel pertama.
   
-![img46](assets/img/edit_view.png)
+![img23](assets/img/edit_view.png)
 <br>
 
 ## 13. Menghapus data pada Artikel
@@ -401,22 +425,15 @@ public function edit($id)
     }
 ```
 
-![img47](assets/img/controller_delete.png)
-<br>
-
-- Akses browser dengan http://localhost:8080/admin/artikel/add untuk membuat artikel ketiga, lalu `kirim`.
-![img48](assets/img/12.26.PNG)
-<br>
-
-- Untuk mengeceknya ketik di url, http://localhost:8080/artikel kemudian enter.
-![img49](assets/img/12.27.PNG)
+![img24](assets/img/controller_delete.png)
 <br>
 
 - Pergi ke menu admin untuk menghapusnya, http://localhost:8080/admin/artikel, kemudian pilih `hapus`.
-![img50](assets/img/12.28.PNG)
+- 
+![img27](assets/img/view_delete.png)
 <br>
 
 - Artikel berhasil dihapus.
-![img51](assets/img/12.29.PNG)
+![img28](assets/img/view_delete2.png)
 
 <div id="p13">
