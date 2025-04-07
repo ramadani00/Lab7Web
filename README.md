@@ -26,6 +26,11 @@
     <td>View Layout dan View Cell</td>
     <td><a href="">Klik disini</td>
   </tr>
+     <tr>
+    <td><b>Praktikum 4</b></td>
+    <td>Framework Lanjutan (Modul Login)</td>
+    <td><a href="">Klik disini</td>
+  </tr>
 </table>_________________________________________________________________________________
 _________________________________________________________________________________
 <div id="p11">
