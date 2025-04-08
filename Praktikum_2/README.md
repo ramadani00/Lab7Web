@@ -4,7 +4,7 @@
 
 Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah database server menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan melalui XAMPP.
 
-## 1. Membuat Database
+## Membuat Database
 - Jalankan ``Apache, MySql`` pada Xampp, Buat database dengan nama ``lab_ci4`` di http://localhost/phpmyadmin.
 - Buat tabel dengan nama ``artikel``.
   
@@ -23,14 +23,14 @@ Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah datab
 ![img1](assets/img/create_table.png)
 <br>
 
-## 2. Konfigurasi Koneksi Database
+## Konfigurasi Koneksi Database
 Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan dua acara, yaitu pada file app/config/database.php atau menggunakan  file .env. 
 - Terletak di folder ``ci4``, file `.env`, Hapus tanda `#`.
   
 ![img2](assets/img/koneksi_db.png)
 <br>
 
-## 3. Membuat Model 
+## Membuat Model 
 Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada direktori app/Models dengan nama ArtikelModel.php
 - Terletak di folder `app/Models`, buat file `ArtikelModel.php`.
   
@@ -50,7 +50,7 @@ Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pa
 ![img3](assets/img/membuat_model.png)
 <br>
 
-## 4. Membuat Controller 
+## Membuat Controller 
 Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 - Terletak di folder `app/Controllers`, buat file `Artikel.php`.
 
@@ -71,7 +71,7 @@ Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 ![img4](assets/img/membuat_controller.png)
 <br>
 
-## 5. Membuat View pada artikel 
+## Membuat View pada artikel 
 Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file baru dengan nama index.php. 
 - Terletak di folder `app/Views/artikel`, buat file `index.php`.
   
@@ -125,7 +125,7 @@ Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat 
 ![img8](assets/img/artikel.png)
 <br>
 
-## 6. Membuat Tampilan detail Artikel
+## Membuat Tampilan detail Artikel
 Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Tambahkan fungsi baru pada Controller Artikel dengan nama view().
 - Terletak di folder `app/Controllers`, edit file `Artikel.php`. Tambah method ``view()``.
   
@@ -149,7 +149,7 @@ public function view($slug)
 ![img9](assets/img/detail_artikel.png)
 <br>
 
-## 7. Membuat View pada Detail
+## Membuat View pada Detail
 - Terletak di folder `app/Views/artikel`, buat file `detail.php`.
   
 ```php
@@ -167,7 +167,7 @@ public function view($slug)
 ![img10](assets/img/detail_php.png)
 <br>
 
-## 8. Membuat Routing untuk artikel detail
+## Membuat Routing untuk artikel detail
 - Terletak di folder `app/Config`, edit file `Routes.php`.
   
 ```php
@@ -177,7 +177,7 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 ![img11](assets/img/artikelkedua.png)
 <br>
 
-## 9. Membuat Menu admin
+## Membuat Menu admin
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `admin_index()`.
   
 ```php
@@ -287,7 +287,7 @@ public function admin_index()
 ![img15](assets/img/admin_footer.png)
 <br>
 
-## 10. Membuat Routing untuk menu admin
+## Membuat Routing untuk menu admin
 - Terletak di folder `app/Config`, edit file `Routes.php`.
   
 ![img16](assets/img/routes_admin.png)
@@ -357,7 +357,7 @@ public function add()
 ![img26](assets/img/view_add2.png)
 <br>
 
-## 12. Mengubah data pada Artikel
+## Mengubah data pada Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `edit()`.
 ```php
 public function edit($id) 
@@ -415,7 +415,7 @@ public function edit($id)
 ![img23](assets/img/edit_view.png)
 <br>
 
-## 13. Menghapus data pada Artikel
+## Menghapus data pada Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `delete()`.
 ```php
  public function delete($id) 
