@@ -23,7 +23,7 @@ Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah datab
 <br>
 
 ## 2. Konfigurasi Koneksi Database
-Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan du acara, yaitu pada file app/config/database.php atau menggunakan  file .env. 
+Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan dua acara, yaitu pada file app/config/database.php atau menggunakan  file .env. 
 - Terletak di folder ``ci4``, file `.env`, Hapus tanda `#`.
   
 ![img2](assets/img/koneksi_db.png)
