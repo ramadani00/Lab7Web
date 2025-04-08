@@ -1,6 +1,6 @@
 # <span style="color: blue">Praktikum 2 | Framework Lanjutan (CRUD)</span>
 
-##Persiapan.
+## Persiapan.
 
 Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah database server menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan melalui XAMPP.
 
