@@ -1,7 +1,6 @@
 
 # <spaan style="color: blue">Praktikum 1 | PHP Framework (Codeigniter)</span>
 
-## Langkah langkah praktikum
 ## Persiapan :
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi
 pada webserver. Beberapa ekstensi PHP perlu diaktifkan untuk kebutuhan
