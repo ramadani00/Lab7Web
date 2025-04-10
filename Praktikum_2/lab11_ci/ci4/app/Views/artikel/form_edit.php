@@ -1,15 +1,28 @@
 <?= $this->include('template/admin_header'); ?>
 
-<h2><?= $title; ?></h2>
+<div class="container mt-4">
+    <h2 class="mb-4"><?= esc($title); ?></h2>
 
-<form action="" method="post">
-    <p><input type="text" name="judul" class="form-control"  value="<?= $data['judul'];?>" ></p>
-    <p>
-        <textarea name="isi" id="isi" rows="10" style="width: 600px;" class="form-control"><?= $data['isi']; ?></textarea>
-    </p>
-    <p>
-        <input type="submit" value="Kirim" class="btn btn-primary btn-lg">
-    </p>
-</form>
+    <form action="" method="post" enctype="multipart/form-data">
+        <?= csrf_field() ?>
+
+        <div class="mb-3">
+            <label for="judul" class="form-label">Judul Artikel</label>
+            <input type="text" name="judul" id="judul" class="form-control" value="<?= esc($data['judul']); ?>" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="isi" class="form-label">Isi Artikel</label>
+            <textarea name="isi" id="isi" rows="10" class="form-control" style="width: 100%;" required><?= esc($data['isi']); ?></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="gambar" class="form-label">Upload Gambar Baru (opsional)</label>
+            <input type="file" name="gambar" id="gambar" class="form-control" accept="image/*">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Kirim</button>
+    </form>
+</div>
 
 <?= $this->include('template/admin_footer'); ?>
