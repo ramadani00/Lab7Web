@@ -9,7 +9,7 @@ Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep p
 - Buat folder ``layout`` di dalam ``app/Views/``.
 - Buat file ``main.php`` di dalam folder ``layout`` dengan kode berikut :
   
-    ```html
+    ```php
 <!DOCTYPE html>
 <html lang="en">
 <head>
