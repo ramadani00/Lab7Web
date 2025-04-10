@@ -5,7 +5,6 @@
 
     <form action="" method="post" enctype="multipart/form-data">
         <?= csrf_field() ?>
-
         <div class="mb-3">
             <label for="judul" class="form-label">Judul Artikel</label>
             <input type="text" name="judul" id="judul" class="form-control" placeholder="Masukkan judul artikel" required>

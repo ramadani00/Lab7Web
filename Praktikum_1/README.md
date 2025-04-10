@@ -1,19 +1,7 @@
-# Lab7Web
-
-|  | |
-| ----------- | ----------- |
-| <b> Nama     | Dini Ramadani       |
-| <b> NIM     | 312310120       |
-| <b> Kelas   | TI.23.C2        |
-| <b> Matakuliah   | Pemrograman Web 2      |
-|  | |
-
-<div id="p11">
 
 # <spaan style="color: blue">Praktikum 1 | PHP Framework (Codeigniter)</span>
 
-## Langkah langkah praktikum
-## Persiapan
+## Persiapan :
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi
 pada webserver. Beberapa ekstensi PHP perlu diaktifkan untuk kebutuhan
 pengembangan Codeigniter 4.
