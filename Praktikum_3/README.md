@@ -1,63 +1,66 @@
 # <span style="color: blue">Praktikum 3 | View Layout dan View Cell</span>
 
 
+
 ## Persiapan :
 
 Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep parsial atau memecah bagian template menjadi beberapa bagian untuk kemudian di include pada view yang lain. Praktikum kali ini kita akan mengunakan konsep View Layout dan View Cell untuk memudahkan dalam penggunaan layout.
+
 
 ## Membuat Layout Utama
 - Buat folder ``layout`` di dalam ``app/Views/``.
 - Buat file ``main.php`` di dalam folder ``layout`` dengan kode berikut :
   
     ```php
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><?= $title ?? 'Dini Website' ?></title>
-    <link rel="stylesheet" href="<?= base_url('/style.css');?>">
-</head>
-<body>
-    <div id="container">
-        <header>
-            <h1>Layout Sederhana</h1>
-        </header>
-        <nav>
-            <a href="<?= base_url('/');?>">Home</a>
-            <a href="<?= base_url('/artikel');?>">Artikel</a>
-            <a href="<?= base_url('/about');?>">About</a>
-            <a href="<?= base_url('/contact');?>">Kontak</a>
-        </nav>
-        <section id="wrapper">
-            <section id="main">
-                <?= $this->renderSection('content') ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title><?= $title ?? 'Dini Website' ?></title>
+        <link rel="stylesheet" href="<?= base_url('/style.css');?>">
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h1>Layout Sederhana</h1>
+            </header>
+            <nav>
+                <a href="<?= base_url('/');?>">Home</a>
+                <a href="<?= base_url('/artikel');?>">Artikel</a>
+                <a href="<?= base_url('/about');?>">About</a>
+                <a href="<?= base_url('/contact');?>">Kontak</a>
+            </nav>
+            <section id="wrapper">
+                <section id="main">
+                    <?= $this->renderSection('content') ?>
+                </section>
+                <aside id="sidebar">
+                    <?= view_cell('App\\Cells\\ArtikelTerkini::render') ?>
+                    <div class="widget-box">
+                        <h3 class="title">Widget Header</h3>
+                        <ul>
+                            <li><a href="#">Widget Link</a></li>
+                            <li><a href="#">Widget Link</a></li>
+                        </ul>
+                    </div>
+                    <div class="widget-box">
+                        <h3 class="title">Widget Text</h3>
+                        <p>Vestibulum lorem elit, iaculis in nisl volutpat, malesuada tincidunt arcu. Proin in leo fringilla, 
+                            vestibulum mi porta, faucibus felis. Integer pharetra est nunc, nec pretium nunc pretium ac.</p>
+                    </div>
+                </aside>
             </section>
-            <aside id="sidebar">
-                <?= view_cell('App\\Cells\\ArtikelTerkini::render') ?>
-                <div class="widget-box">
-                    <h3 class="title">Widget Header</h3>
-                    <ul>
-                        <li><a href="#">Widget Link</a></li>
-                        <li><a href="#">Widget Link</a></li>
-                    </ul>
-                </div>
-                <div class="widget-box">
-                    <h3 class="title">Widget Text</h3>
-                    <p>Vestibulum lorem elit, iaculis in nisl volutpat, malesuada tincidunt arcu. Proin in leo fringilla, 
-                        vestibulum mi porta, faucibus felis. Integer pharetra est nunc, nec pretium nunc pretium ac.</p>
-                </div>
-            </aside>
-        </section>
-        <footer>
-            <p>&copy; 2021 - Universitas Pelita Bangsa</p>
-        </footer>
-    </div>
-</body>
-</html>
-```
+            <footer>
+                <p>&copy; 2021 - Universitas Pelita Bangsa</p>
+            </footer>
+        </div>
+    </body>
+    </html>
+    ```
     
 ![img1](assets/img/.png)
 <br>
+
 
 ## Membuat File View
 - Ubah ``app/Views/home.php`` agagr sesuai dengan layout baru :
