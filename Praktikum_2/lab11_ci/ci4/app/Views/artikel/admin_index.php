@@ -6,7 +6,7 @@
         <thead class="table-primary text-center">
             <tr>
                 <th style="width: 5%;">ID</th>
-                <th style="width: 55%;">Judul & Isi</th>
+                <th style="width: 55%;">Judul</th>
                 <th style="width: 15%;">Status</th>
                 <th style="width: 25%;">Aksi</th>
             </tr>
@@ -52,7 +52,7 @@
         <tfoot class="table-light text-center">
             <tr>
                 <th style="width: 5%;">ID</th>
-                <th style="width: 50%;">Judul & Isi</th>
+                <th style="width: 50%;">Judul</th>
                 <th style="width: 20%;">Status</th>
                 <th style="width: 25%;">Aksi</th>
             </tr>
