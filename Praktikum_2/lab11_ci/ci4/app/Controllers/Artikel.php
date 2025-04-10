@@ -47,6 +47,7 @@ class Artikel extends BaseController
             $artikel->insert([
                 'judul' => $this->request->getPost('judul'),
                 'isi' => $this->request->getPost('isi'),
+                'status' => 'publish',
                 'slug' => url_title($this->request->getPost('judul')),
             ]);
             return redirect('admin/artikel');
