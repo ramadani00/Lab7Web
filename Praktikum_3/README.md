@@ -58,7 +58,7 @@ Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep p
     </html>
     ```
     
-![img1](assets/img/.png)
+![img1](assets/img/mainphp.png)
 <br>
 
 
@@ -76,11 +76,11 @@ Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep p
 <?= $this->endSection() ?>
 ```
 
-![img2](assets/img/.png)
+![img2](assets/img/homephp.png)
 <br>
 
 
-## Membuat Class view Cell
+## Membuat Class View Cell
 - Buat folder ``Cells`` di dalam ``app/``
 - Buat file ``ArtikelTerkini.php`` di dalam ``app/Cells/`` dengan kode berikut:
 
@@ -101,7 +101,7 @@ class ArtikelTerkini
 }
 ```
 
-![img3](assets/img/.png)
+![img3](assets/img/artikelterkini.png)
 <br>
 
 
@@ -125,5 +125,22 @@ class ArtikelTerkini
 </div>
 ```
 
-![img4](assets/img/.png)
+![img4](assets/img/artikel_terkini.png)
+<br>
+
+
+
+![img5](assets/img/dashboard.png)
+<br>
+
+
+![img6](assets/img/artikel.png)
+<br>
+
+
+![img7](assets/img/about.png)
+<br>
+
+
+![img8](assets/img/kontak.png)
 <br>

@@ -23,7 +23,7 @@
                         <td class="text-center">
                             <?php if ($row['status'] === 'publish'): ?>
                                 <span class="badge bg-success">
-                                    <i class="bi bi-check-circle-fill me-1"></i>Dipublikasikan
+                                    <i class="bi bi-check-circle-fill me-1"></i>Publish
                                 </span>
                             <?php elseif ($row['status'] === 'draft'): ?>
                                 <span class="badge bg-secondary">

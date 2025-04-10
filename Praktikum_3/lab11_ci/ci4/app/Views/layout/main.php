@@ -8,7 +8,7 @@
 <body>
     <div id="container">
         <header>
-            <h1>Layout Sederhana</h1>
+            <h1>InfoTerkini.id</h1>
         </header>
         <nav>
             <a href="<?= base_url('/');?>">Home</a>
@@ -37,7 +37,7 @@
             </aside>
         </section>
         <footer>
-            <p>&copy; 2021 - Universitas Pelita Bangsa</p>
+            <p>&copy; 2025 - Universitas Pelita Bangsa</p>
         </footer>
     </div>
 </body>
