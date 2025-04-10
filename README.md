@@ -24,7 +24,7 @@
   <tr>
     <td><b>Praktikum 3</b></td>
     <td>View Layout dan View Cell</td>
-    <td><a href="">Klik disini</td>
+    <td><a href="https://github.com/diniramadani/Lab7Web/tree/main/Praktikum_3">Klik disini</td>
   </tr>
      <tr>
     <td><b>Praktikum 4</b></td>
