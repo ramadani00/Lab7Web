@@ -88,14 +88,14 @@ Direktori utama untuk pengembangan aplikasi. Di sinilah kamu akan menyimpan:
 
 📁 ``public/``
 Ini adalah root direktori web server (dokumen publik).
-- Berisi file index.php, gambar, CSS, JS, dan file statis lainnya.
+- Berisi file ``index.php``, gambar, CSS, JS, dan file statis lainnya.
 - Kamu akan mengakses aplikasi dari sini (misalnya: localhost:8080/).
-<em>Penting: Jangan letakkan file penting di sini karena bisa diakses publik!</em><br>
+- <em>Penting: Jangan letakkan file penting di sini karena bisa diakses publik!</em><br>
 
 📁 ``system/``
 Inti dari framework CodeIgniter.
 - Berisi semua kode internal yang dibutuhkan untuk menjalankan CodeIgniter.
-<em> Jangan ubah file di sini kecuali kamu tahu apa yang kamu lakukan.</em><br>
+- <em> Jangan ubah file di sini kecuali kamu tahu apa yang kamu lakukan.</em><br>
 
 📁 ``test/``
 Folder ini digunakan untuk testing aplikasi menggunakan PHPUnit.
