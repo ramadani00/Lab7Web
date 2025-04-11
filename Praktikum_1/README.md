@@ -1,17 +1,8 @@
-
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  style="width: 500px; height: auto;" alt="Description"/>
-
-### Dini Ramadani | Universitas Pelita Bangsa
-
-
-<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 1 | PHP Framework (CodeIgniter)</h1>
-
-<br>
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>README dengan Sidebar</title>
+  <title>Praktikum 1 | PHP Framework (CodeIgniter)</title>
   <style>
     body {
       margin: 0;
@@ -46,41 +37,32 @@
     .navbar a:hover {
       text-decoration: underline;
     }
+    .centered {
+      text-align: center;
+      margin-top: 20px;
+    }
+    h1.title {
+      color: blue;
+      font-size: 36px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .author {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 <body>
 
-  <div class="content">
-    <h2 id="persiapan-">Persiapan</h2>
-    <p>Konten bagian persiapan...</p>
+<div class="content">
+    <div class="author">
+      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif" style="width: 200px; height: auto;" alt="Dini Ramadani"/>
+      <p><strong>Dini Ramadani | Universitas Pelita Bangsa</strong></p>
+    </div>
+</div>
 
-    <h2 id="instalasi--codeigniter-4">Instalasi CodeIgniter 4</h2>
-    <p>Konten instalasi...</p>
-
-    <h2 id="menjalankan-cli-command-line-interface">Menjalankan CLI</h2>
-    <p>Konten CLI...</p>
-
-    <h2 id="mengaktifkan-mode-debugging">Mengaktifkan Mode Debugging</h2>
-    <p>Konten debugging...</p>
-
-    <h2 id="struktur-direktori">Struktur Direktori</h2>
-    <p>Konten struktur direktori...</p>
-
-    <h2 id="routing-and-controller">Routing and Controller</h2>
-    <p>Konten routing dan controller...</p>
-
-    <h2 id="membuat-route-baru">Membuat Route Baru</h2>
-    <p>Konten route baru...</p>
-
-    <h2 id="membuat-controller">Membuat Controller</h2>
-    <p>Konten controller...</p>
-
-    <h2 id="membuat-view">Membuat View</h2>
-    <p>Konten view...</p>
-
-    <h2 id="membuat-layout-web-dengan-css">Membuat Layout Web dengan CSS</h2>
-    <p>Konten layout dengan CSS...</p>
-  </div>
 
   <div class="navbar">
     <strong>📚 Daftar Isi:</strong>
@@ -95,9 +77,6 @@
     <a href="#membuat-view">View</a>
     <a href="#membuat-layout-web-dengan-css">CSS Layout</a>
   </div>
-
-</body>
-</html>
 
 ## Persiapan :
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi
@@ -371,3 +350,6 @@ Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
          style="width: 400px; height: auto;" 
          alt="Description"/>
   </div>
+
+</body>
+</html>
