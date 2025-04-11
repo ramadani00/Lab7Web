@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 20px;
+  }
+  
+  .main-content {
+    flex: 1;
+    max-width: 800px;
+  }
+  
+  .toc {
+    position: sticky;
+    top: 100px; /* agar sticky saat discroll */
+    width: 250px;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: max-content;
+  }
+  
+  .toc ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .toc li {
+    margin-bottom: 10px;
+  }
+  
+  .toc a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .toc a:hover {
+    text-decoration: underline;
+  }
+  

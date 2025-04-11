@@ -8,19 +8,33 @@
 
 <br>
 
-## 📚 Daftar Isi
-
-- [Persiapan](#persiapan-)
-- [Instalasi Codeigniter 4](#instalasi--codeigniter-4)
-- [Menjalankan CLI (Command Line Interface)](#menjalankan-cli-command-line-interface)
-- [Mengaktifkan Mode Debugging](#mengaktifkan-mode-debugging)
-- [Struktur Direktori](#struktur-direktori)
-- [Routing and Controller](#routing-and-controller)
-- [Membuat Route Baru](#membuat-route-baru)
-- [Membuat Controller](#membuat-controller)
-- [Membuat View](#membuat-view)
-- [Membuat Layout Web dengan CSS](#membuat-layout-web-dengan-css)
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title; ?></title>
+    <link rel="stylesheet" href="<?= base_url('assets/style.css'); ?>">
+</head>
+<div class="container">
+  <div class="main-content">
+    <!-- Semua isi utama seperti artikel kamu -->
+  </div>
+  <aside class="toc">
+    <h2>📚 Daftar Isi</h2>
+    <ul>
+      <li><a href="#persiapan-">Persiapan</a></li>
+      <li><a href="#instalasi--codeigniter-4">Instalasi Codeigniter 4</a></li>
+      <li><a href="#menjalankan-cli-command-line-interface">Menjalankan CLI</a></li>
+      <li><a href="#mengaktifkan-mode-debugging">Mengaktifkan Mode Debugging</a></li>
+      <li><a href="#struktur-direktori">Struktur Direktori</a></li>
+      <li><a href="#routing-and-controller">Routing and Controller</a></li>
+      <li><a href="#membuat-route-baru">Membuat Route Baru</a></li>
+      <li><a href="#membuat-controller">Membuat Controller</a></li>
+      <li><a href="#membuat-view">Membuat View</a></li>
+      <li><a href="#membuat-layout-web-dengan-css">Layout Web dengan CSS</a></li>
+    </ul>
+  </aside>
+</div>
 
 ## Persiapan :
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi
