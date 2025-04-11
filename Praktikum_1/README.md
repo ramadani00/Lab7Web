@@ -4,20 +4,20 @@
 ### Dini Ramadani | Universitas Pelita Bangsa
 
 <h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 1 | PHP Framework (Codeigniter)</h1>
-U
+
 <br>
 
    <div class="navbar">
     <strong>📚 Daftar Isi:</strong>
     <a href="#persiapan-">Persiapan</a>
-    <a href="#instalasi--codeigniter-4">Instalasi</a>
-    <a href="#menjalankan-cli-command-line-interface">CLI</a>
-    <a href="#mengaktifkan-mode-debugging">Debugging</a>
-    <a href="#struktur-direktori">Struktur</a>
-    <a href="#routing-and-controller">Routing</a>
-    <a href="#membuat-route-baru">Route</a>
-    <a href="#membuat-controller">Controller</a>
-    <a href="#membuat-view">View</a>
+    <a href="#instalasi--codeigniter-4">Instalasi Codeigniter4</a>
+    <a href="#menjalankan-cli-command-line-interface">Menjalankan CLI</a>
+    <a href="#mengaktifkan-mode-debugging">Mengaktifkan Mode Debugging</a>
+    <a href="#struktur-direktori">Struktur Direktori</a>
+    <a href="#routing-and-controller">Routing ang Controller</a>
+    <a href="#membuat-route-baru">Membuat Route Baru</a>
+    <a href="#membuat-controller"> Membubat Controller</a>
+    <a href="#membuat-view">Membuat View</a>
     <a href="#membuat-layout-web-dengan-css">CSS Layout</a>
   </div>
 
@@ -131,6 +131,8 @@ File konfigurasi environment. Ubah nama menjadi ``.env`` untuk mengaktifkannya d
 Routing digunakan untuk menentukan URL endpoint mana yang akan diarahkan ke controller tertentu. Controller menangani logika aplikasi dan menghubungkan antara model dan view.
 
 Router terletak pada file ``app/config/Routes.php``
+<br>
+
 <br>
 
 ## Membuat Route Baru
