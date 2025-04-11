@@ -208,8 +208,8 @@ class ArtikelModel extends Model
 
 
 
-## View Cell
-Berikut adalah tampilan ``View Cell`` di setiap halaman. Komponen ``Artikel Terkin``i`` ditampilkan di sisi kanan layout pada seluruh halaman, lengkap dengan tanggal publikasinya."
+## Tampilan View Cell
+Berikut adalah tampilan ``View Cell`` di setiap halaman. Komponen ``Artikel Terkini`` ditampilkan di sisi kanan layout pada seluruh halaman, lengkap dengan tanggal publikasinya."
 
 - Page ``Home``
 <br>
