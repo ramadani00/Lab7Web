@@ -101,7 +101,7 @@ class ArtikelTerkini
 }
 ```
 
-![img3](assets/img/artikelterkini.png)
+![img3](assets/img/artikelterkiniphp.png)
 <br>
 
 
