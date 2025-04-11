@@ -7,19 +7,22 @@
 
 <br>
 
-   <div class="navbar">
-    <strong>📚 Daftar Isi:</strong>
-    <a href="#persiapan-">Persiapan</a>
-    <a href="#instalasi--codeigniter-4">Instalasi Codeigniter4</a>
-    <a href="#menjalankan-cli-command-line-interface">Menjalankan CLI</a>
-    <a href="#mengaktifkan-mode-debugging">Mengaktifkan Mode Debugging</a>
-    <a href="#struktur-direktori">Struktur Direktori</a>
-    <a href="#routing-and-controller">Routing ang Controller</a>
-    <a href="#membuat-route-baru">Membuat Route Baru</a>
-    <a href="#membuat-controller"> Membubat Controller</a>
-    <a href="#membuat-view">Membuat View</a>
-    <a href="#membuat-layout-web-dengan-css">CSS Layout</a>
-  </div>
+<div class="navbar">
+  <h2>📚 Daftar Isi</h2>
+  <ul class="toc-list">
+    <li><a href="#persiapan-">📌 Persiapan</a></li>
+    <li><a href="#instalasi--codeigniter-4">⚙️ Instalasi CodeIgniter 4</a></li>
+    <li><a href="#menjalankan-cli-command-line-interface">💻 Menjalankan CLI</a></li>
+    <li><a href="#mengaktifkan-mode-debugging">🛠️ Mode Debugging</a></li>
+    <li><a href="#struktur-direktori">📁 Struktur Direktori</a></li>
+    <li><a href="#routing-and-controller">🔀 Routing dan Controller</a></li>
+    <li><a href="#membuat-route-baru">📝 Membuat Route Baru</a></li>
+    <li><a href="#membuat-controller">🔧 Membuat Controller</a></li>
+    <li><a href="#membuat-view">🎨 Membuat View</a></li>
+    <li><a href="#membuat-layout-web-dengan-css">💅 CSS Layout</a></li>
+  </ul>
+</div>
+
 
 <br>
 
