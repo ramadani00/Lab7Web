@@ -1,7 +1,7 @@
 
 <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  style="width: 500px; height: auto;" alt="Description"/>
 
-### Dini Ramadani | Universitas Pelita Banggsa
+### Dini Ramadani | Universitas Pelita Bangsa
 
 
 <h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 1 | PHP Framework (CodeIgniter)</h1>
@@ -93,12 +93,9 @@ Direktori utama untuk pengembangan aplikasi. Di sinilah kamu akan menyimpan:
 Ini adalah root direktori web server (dokumen publik).
 - Berisi file ``index.php``, gambar, CSS, JS, dan file statis lainnya.
 - Kamu akan mengakses aplikasi dari sini (misalnya: localhost:8080/).
-- <em>Penting: Jangan letakkan file penting di sini karena bisa diakses publik!</em><br>
 
 📁 ``system/`` : 
 Inti dari framework CodeIgniter.
-- Berisi semua kode internal yang dibutuhkan untuk menjalankan CodeIgniter.
-- <em> Jangan ubah file di sini kecuali kamu tahu apa yang kamu lakukan.</em><br>
 
 📁 ``test/`` : 
 Folder ini digunakan untuk testing aplikasi menggunakan PHPUnit.
