@@ -2,7 +2,7 @@
 
 ### Dini Ramadani | Universitas Pelita Bangsa
 
-<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 3 Part 2 | Menampilkan Artikel Berdasarkan Kategori
+<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 3 Part 2 | Menampilkan Artikel Berdasarkan Kategori</h1>
 <br>
 
 <div class="navbar">
