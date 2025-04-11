@@ -104,7 +104,7 @@ Inti dari framework CodeIgniter.
 Folder ini digunakan untuk testing aplikasi menggunakan PHPUnit.
 
 📁 ``writable``
-Folder untuk menyimpan file-file yang perlu dimodifikasi (ditulis) oleh sistem secara otomatis saat aplikasi berjalan (write permission):
+Folder untuk menyimpan file yang perlu dimodifikasi/ditulis oleh sistem (write permission):
 - ``cache/``: Penyimpanan cache sementara.
 - ``logs/``: Catatan log error atau debugging.
 - ``uploads/``: Tempat menyimpan file hasil upload (opsional).
