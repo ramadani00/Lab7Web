@@ -3,9 +3,10 @@
 
 ## Persiapan :
 
-Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah database server menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan melalui XAMPP.
+Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah database server menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan melalui XAMPP. XAMPP adalah perangkat lunak untuk menyediakan server lokal. Apache digunakan sebagai server web, dan MySQL digunakan sebagai server database untuk menyimpan data aplikasi CRUD.
 
 ## Membuat Database
+Database adalah tempat penyimpanan data aplikasi. Tabel artikel dibuat menggunakan perintah ``SQL CREATE TABLE`` dengan kolom id, judul, isi, gambar, status, dan slug. Kolom id adalah primary key yang secara otomatis bertambah (auto_increment).
 - Jalankan ``Apache, MySql`` pada Xampp, Buat database dengan nama ``lab_ci4`` di http://localhost/phpmyadmin.
 - Buat tabel dengan nama ``artikel``.
   
@@ -26,7 +27,8 @@ Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah datab
 
 
 ## Konfigurasi Koneksi Database
-Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan dua acara, yaitu pada file app/config/database.php atau menggunakan  file .env. 
+Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan dua acara, yaitu pada file app/config/database.php atau menggunakan  file .env. File .env adalah file konfigurasi untuk menyimpan pengaturan seperti nama database, pengguna, dan kata sandi. Menghapus tanda # di depan konfigurasi database akan mengaktifkan pengaturan tersebut.
+
 - Terletak di folder ``ci4``, file `.env`, Hapus tanda `#`.
   
 ![img2](assets/img/koneksi_db.png)
@@ -34,8 +36,8 @@ Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konf
 
 
 ## Membuat Model 
-Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada direktori app/Models dengan nama ArtikelModel.php
-- Terletak di folder `app/Models`, buat file `ArtikelModel.php`.
+Selanjutnya adalah membuat Model untuk memproses data Artikel. Model adalah komponen yang bertugas untuk berinteraksi langsung dengan database. ArtikelModel digunakan untuk memproses data dari tabel artikel. Properti seperti $table menentukan nama tabel, dan $allowedFields menentukan kolom yang dapat diakses.
+- Buat file baru pada direktori ``app/Models`` dengan nama ``ArtikelModel.php``
   
   ```php
   <?php
@@ -54,9 +56,9 @@ Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pa
 <br>
 
 
-## Membuat Controller 
-Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
-- Terletak di folder `app/Controllers`, buat file `Artikel.php`.
+## Membuat Controller
+Controller adalah komponen yang mengatur logika aplikasi dan menghubungkan model dengan view. Fungsi ``index()`` memanggil semua data artikel dari model dan mengirimkannya ke view untuk ditampilkan.
+- Buat Controller baru dengan nama ``Artikel.php`` pada direktori ``app/Controllers``.``
 
   ```php
   <?php
@@ -76,10 +78,11 @@ Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
 ![img4](assets/img/membuat_controller.png)
 <br>
 
-## Membuat View pada artikel 
-Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file baru dengan nama index.php. 
-- Terletak di folder `app/Views/artikel`, buat file `index.php`.
-  
+## Membuat View pada artikel
+View adalah bagian yang bertugas menampilkan data kepada pengguna dalam bentuk HTML. File ini menampilkan daftar artikel dengan struktur HTML dan menggunakan data yang dikirim dari controller.
+
+- Buat direktori baru dengan nama ``artikel`` pada direktori ``app/views``, kemudian buat file baru dengan nama ``index.php``. 
+
   ```php
   <?= $this->include('template/header'); ?>
   <?php if($artikel): foreach($artikel as $row): ?>
@@ -131,7 +134,7 @@ Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat 
 <br>
 
 ## Membuat Tampilan detail Artikel
-Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Tambahkan fungsi baru pada Controller Artikel dengan nama view().
+Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. 
 - Terletak di folder `app/Controllers`, edit file `Artikel.php`. Tambah method ``view()``.
   
 ```php

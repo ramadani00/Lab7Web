@@ -23,8 +23,7 @@ diaktifkan. Kemudian simpan kembali filenya dan restart Apache web server.
 ![img2](assets/img/ekstensi_php.png)
 
 ## Instalasi  Codeigniter 4
-Untuk melakukan instalasi Codeigniter 4 dapat dilakukan dengan dua cara, yaitu cara manual dan menggunakan composer. Pada praktikum ini kita menggunakan cara
-manual.
+Langkah ini adalah proses instalasi framework Codeigniter 4 secara manual. Framework ini digunakan untuk mempermudah pengembangan aplikasi berbasis PHP. Untuk melakukan instalasi Codeigniter 4 dapat dilakukan dengan dua cara, yaitu cara manual dan menggunakan composer. Pada praktikum ini kita menggunakan cara manual.
 - Unduh Codeigniter dari website https://codeigniter.com/download
 - Extrak file zip Codeigniter ke direktori htdocs/lab11_ci.
 - Ubah nama direktory framework-4.x.xx menjadi ci4.
@@ -33,8 +32,7 @@ manual.
 ![img3](assets/img/codeigniter.png)
 
 ## Menjalankan CLI (Command Line Interface)
-Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk
-mengakses CLI buka terminal/command prompt.
+Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk mengakses CLI buka terminal/command prompt.
 
 ![img4](assets/img/cli.png)
 
@@ -48,6 +46,7 @@ php spark
 ![img5](assets/img/cli2.png)
 
 ## Mengaktifkan Mode Debugging
+Mode debugging memungkinkan untuk melihat pesan error secara detail. 
 - Ketik ``php spark serve`` pada CLI untuk menjalankan.
 
 ![img6](assets/img/cli3.png)
@@ -63,10 +62,13 @@ php spark
 
 
 ## Struktur Direktori
+Memahami struktur direktori Codeigniter sangat penting agar tahu di mana harus menyimpan file seperti controller, model, view, dan file statis.
 
 ![img11](assets/img/sdir.png)
 
 ## Routing and Controller
+Routing digunakan untuk menentukan URL endpoint mana yang akan diarahkan ke controller tertentu. Controller menangani logika aplikasi dan menghubungkan antara model dan view.
+
 Router terletak pada file ``app/config/Routes.php``
 
 ## Membuat Route Baru
@@ -137,7 +139,7 @@ Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan
 ![img8](assets/img/controllerpage.png)
 
 ## Membuat View
-Selanjutnya adalam membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan nama ``about.php`` pada direktori view ``(app/view/about.php)`` kemudian isi kodenya seperti berikut.
+Selanjutnya adalah membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan nama ``about.php`` pada direktori view ``(app/view/about.php)`` kemudian isi kodenya seperti berikut.
 ```php
 <!DOCTYPE html>
 <html lang="en">

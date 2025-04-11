@@ -107,7 +107,7 @@ class ArtikelTerkini
 
 ## Membuat View untuk View Cell
 - Buat folder ``components`` di dalam ``app/Views/``
-- Buat file ``artikel_terkini.php`` di dalam ``app/Views/components/`` dengan kokde berikut :
+- Buat file ``artikel_terkini.php`` di dalam ``app/Views/components/`` dengan kode berikut :
 
 ```php
 <div class="widget-box">
