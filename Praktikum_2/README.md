@@ -24,6 +24,7 @@
     <li><a href="#membuat-routing-untuk-menu-admin">🧭 Membuat Routing untuk Menu Admin</a></li>
     <li><a href="#menambah-data-untuk-artikel">➕ Menambah Data untuk Artikel</a></li>
     <li><a href="#mengubah-data-pada-artikel">✏️ Mengubah Data pada Artikel</a></li>
+    <li><a href="#menghapus-data-pada-artikel">🗑️ Menghapus Data pada Artikel</a></li>
   </ul>
 </div>
 
@@ -116,7 +117,7 @@ Controller adalah komponen yang mengatur logika aplikasi dan menghubungkan model
 
 <br>
 
-## Membuat View pada artikel
+## Membuat View pada Artikel
 View adalah bagian yang bertugas menampilkan data kepada pengguna dalam bentuk HTML. File ini menampilkan daftar artikel dengan struktur HTML dan menggunakan data yang dikirim dari controller.
 
 - Buat direktori baru dengan nama ``artikel`` pada direktori ``app/views``, kemudian buat file baru dengan nama ``index.php``. 
@@ -166,7 +167,7 @@ View adalah bagian yang bertugas menampilkan data kepada pengguna dalam bentuk H
 
 <br>
 
-## Membuat Tampilan detail Artikel
+## Membuat Tampilan Detail Artikel
 Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. 
 - Terletak di folder `app/Controllers`, edit file `Artikel.php`. Tambah method ``view()``.
   
@@ -212,7 +213,7 @@ public function view($slug)
 
 <br>
 
-## Membuat Routing untuk artikel detail
+## Membuat Routing untuk Artikel Detail
 - Terletak di folder `app/Config`, edit file `Routes.php`.
   
 ```php
@@ -224,7 +225,7 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 
 <br>
 
-## Membuat Menu admin
+## Membuat Menu Admin
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `admin_index()`.
   
 ```php
@@ -337,7 +338,7 @@ public function admin_index()
 
 <br>
 
-## Membuat Routing untuk menu admin
+## Membuat Routing untuk Menu Admin
 - Terletak di folder `app/Config`, edit file `Routes.php`.
   
 ![img16](assets/img/routes_admin.png)
@@ -350,7 +351,7 @@ public function admin_index()
 
 <br>
 
-## Menambah data untuk Artikel
+## Menambah Data untuk Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `add()`.
 
 ```php
@@ -411,7 +412,7 @@ public function add()
 
 <br>
 
-## Mengubah data pada Artikel
+## Mengubah Data pada Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `edit()`.
 ```php
 public function edit($id) 
@@ -471,7 +472,7 @@ public function edit($id)
 
 <br>
 
-## Menghapus data pada Artikel
+## Menghapus Data pada Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `delete()`.
 ```php
  public function delete($id) 
