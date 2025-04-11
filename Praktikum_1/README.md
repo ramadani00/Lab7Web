@@ -80,24 +80,22 @@ Memahami struktur direktori Codeigniter sangat penting agar tahu di mana harus m
 
 📁 ``app/``
 Direktori utama untuk pengembangan aplikasi. Di sinilah kamu akan menyimpan:
-- Controllers: Di ``app/Controllers/``, berisi file PHP yang menangani permintaan (request) dari pengguna dan menentukan apa yang akan ditampilkan.
-- Models: Di ``app/Models/``, untuk berinteraksi dengan database (CRUD).
-- Views: Di ``app/Views/``, berisi file tampilan (HTML/Blade) yang ditampilkan ke pengguna.
-- ``Config/``: Konfigurasi aplikasi seperti database, routes, dsb.
+- ``app/Controllers/`` : berisi file PHP yang menangani permintaan (request) dari pengguna dan menentukan apa yang akan ditampilkan.
+- ``app/Models/`` : untuk berinteraksi dengan database (CRUD).
+- ``app/Views/``: berisi file tampilan (HTML/Blade) yang ditampilkan ke pengguna.
+- ``Config/``: konfigurasi aplikasi seperti database, routes, dsb.
 - ``Filters/``, ``Helpers/``, ``Libraries/``: Untuk fungsi tambahan.
 
 📁 ``public/``
 Ini adalah root direktori web server (dokumen publik).
 - Berisi file index.php, gambar, CSS, JS, dan file statis lainnya.
 - Kamu akan mengakses aplikasi dari sini (misalnya: localhost:8080/).
-<br>
-<em>Penting: Jangan letakkan file penting di sini karena bisa diakses publik!</em>
+<em>Penting: Jangan letakkan file penting di sini karena bisa diakses publik!</em><br>
 
 📁 ``system/``
 Inti dari framework CodeIgniter.
 - Berisi semua kode internal yang dibutuhkan untuk menjalankan CodeIgniter.
-<br>
-<em> Jangan ubah file di sini kecuali kamu tahu apa yang kamu lakukan.</em>
+<em> Jangan ubah file di sini kecuali kamu tahu apa yang kamu lakukan.</em><br>
 
 📁 ``test/``
 Folder ini digunakan untuk testing aplikasi menggunakan PHPUnit.
