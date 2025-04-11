@@ -7,21 +7,97 @@
 <h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 1 | PHP Framework (CodeIgniter)</h1>
 
 <br>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>README dengan Sidebar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+    .content {
+      flex: 1;
+      padding: 40px;
+      max-width: 70%;
+    }
+    .navbar {
+      width: 30%;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-left: 2px solid #ddd;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .navbar strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .navbar a {
+      display: block;
+      margin: 6px 0;
+      text-decoration: none;
+      color: #007bff;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
 
-<nav style="background-color: #f2f2f2; padding: 10px 20px; border-radius: 10px; margin-bottom: 20px; font-family: Arial, sans-serif;">
-  <strong>📚 Daftar Isi:</strong>
-  <a href="#persiapan-" style="margin: 0 10px; text-decoration: none; color: #007bff;">Persiapan</a> |
-  <a href="#instalasi--codeigniter-4" style="margin: 0 10px; text-decoration: none; color: #007bff;">Instalasi</a> |
-  <a href="#menjalankan-cli-command-line-interface" style="margin: 0 10px; text-decoration: none; color: #007bff;">CLI</a> |
-  <a href="#mengaktifkan-mode-debugging" style="margin: 0 10px; text-decoration: none; color: #007bff;">Debugging</a> |
-  <a href="#struktur-direktori" style="margin: 0 10px; text-decoration: none; color: #007bff;">Struktur</a> |
-  <a href="#routing-and-controller" style="margin: 0 10px; text-decoration: none; color: #007bff;">Routing</a> |
-  <a href="#membuat-route-baru" style="margin: 0 10px; text-decoration: none; color: #007bff;">Route</a> |
-  <a href="#membuat-controller" style="margin: 0 10px; text-decoration: none; color: #007bff;">Controller</a> |
-  <a href="#membuat-view" style="margin: 0 10px; text-decoration: none; color: #007bff;">View</a> |
-  <a href="#membuat-layout-web-dengan-css" style="margin: 0 10px; text-decoration: none; color: #007bff;">CSS Layout</a>
-</nav>
+  <div class="content">
+    <h2 id="persiapan-">Persiapan</h2>
+    <p>Konten bagian persiapan...</p>
 
+    <h2 id="instalasi--codeigniter-4">Instalasi CodeIgniter 4</h2>
+    <p>Konten instalasi...</p>
+
+    <h2 id="menjalankan-cli-command-line-interface">Menjalankan CLI</h2>
+    <p>Konten CLI...</p>
+
+    <h2 id="mengaktifkan-mode-debugging">Mengaktifkan Mode Debugging</h2>
+    <p>Konten debugging...</p>
+
+    <h2 id="struktur-direktori">Struktur Direktori</h2>
+    <p>Konten struktur direktori...</p>
+
+    <h2 id="routing-and-controller">Routing and Controller</h2>
+    <p>Konten routing dan controller...</p>
+
+    <h2 id="membuat-route-baru">Membuat Route Baru</h2>
+    <p>Konten route baru...</p>
+
+    <h2 id="membuat-controller">Membuat Controller</h2>
+    <p>Konten controller...</p>
+
+    <h2 id="membuat-view">Membuat View</h2>
+    <p>Konten view...</p>
+
+    <h2 id="membuat-layout-web-dengan-css">Membuat Layout Web dengan CSS</h2>
+    <p>Konten layout dengan CSS...</p>
+  </div>
+
+  <div class="navbar">
+    <strong>📚 Daftar Isi:</strong>
+    <a href="#persiapan-">Persiapan</a>
+    <a href="#instalasi--codeigniter-4">Instalasi</a>
+    <a href="#menjalankan-cli-command-line-interface">CLI</a>
+    <a href="#mengaktifkan-mode-debugging">Debugging</a>
+    <a href="#struktur-direktori">Struktur</a>
+    <a href="#routing-and-controller">Routing</a>
+    <a href="#membuat-route-baru">Route</a>
+    <a href="#membuat-controller">Controller</a>
+    <a href="#membuat-view">View</a>
+    <a href="#membuat-layout-web-dengan-css">CSS Layout</a>
+  </div>
+
+</body>
+</html>
 
 ## Persiapan :
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi
