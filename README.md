@@ -26,11 +26,16 @@
     <td><a href="https://github.com/ramadani00/Lab7Web/tree/main/Praktikum_2">Klik disini</td>
   </tr>
   <tr>
-    <td><b>Praktikum 3</b></td>
+    <td><b>Praktikum 3 Part 1</b></td>
     <td>View Layout dan View Cell</td>
-    <td><a href="https://github.com/ramadani00/Lab7Web/tree/main/Praktikum_3">Klik disini</td>
+    <td><a href="https://github.com/ramadani00/Lab7Web/tree/main/Praktikum_3_Part1">Klik disini</td>
   </tr>
-     <tr>
+   <tr>
+    <td><b>Praktikum 3 Part 2</b></td>
+    <td>Menampilkan Artikel Berdasarkan Kategori </td>
+    <td><a href="https://github.com/ramadani00/Lab7Web/tree/main/Praktikum_3%20_Part2">Klik disini</td>
+  </tr>
+  <tr>
     <td><b>Praktikum 4</b></td>
     <td>Framework Lanjutan (Modul Login)</td>
     <td><a href="">Klik disini</td>
