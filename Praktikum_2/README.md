@@ -61,8 +61,11 @@ Database adalah tempat penyimpanan data aplikasi. Tabel artikel dibuat menggunak
 Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan dua acara, yaitu pada ``file app/config/database.php`` atau menggunakan  file ``.env``. File ``.env`` adalah file konfigurasi untuk menyimpan pengaturan seperti nama database, pengguna, dan kata sandi. Menghapus tanda # di depan konfigurasi database akan mengaktifkan pengaturan tersebut.
 
 - Terletak di folder ``ci4``, file `.env`, Hapus tanda `#`.
+
 <br>
+
 ![img2](assets/img/koneksi_db.png)
+
 <br>
 
 <br>
