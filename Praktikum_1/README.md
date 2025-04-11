@@ -4,7 +4,9 @@
 ### Dini Ramadani | Universitas Pelita Banggsa
 
 
-# <spaan style="color: blue">Praktikum 1 | PHP Framework (Codeigniter)</span><br>
+<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 1 | PHP Framework (CodeIgniter)</h1>
+
+<br>
 
 ## Persiapan :
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi
