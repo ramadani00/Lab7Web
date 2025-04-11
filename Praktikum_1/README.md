@@ -1,5 +1,5 @@
 
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif" width="120" height="120" alt="Description"/>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  style="width: 300px; height: auto;" alt="Description"/>
 
 
 
@@ -77,21 +77,23 @@ Memahami struktur direktori Codeigniter sangat penting agar tahu di mana harus m
 
 📁 ``app/``
 Direktori utama untuk pengembangan aplikasi. Di sinilah kamu akan menyimpan:
-- Controllers: Di app/Controllers/, berisi file PHP yang menangani permintaan (request) dari pengguna dan menentukan apa yang akan ditampilkan.
-- Models: Di app/Models/, untuk berinteraksi dengan database (CRUD).
-- Views: Di app/Views/, berisi file tampilan (HTML/Blade) yang ditampilkan ke pengguna.
-- Config/: Konfigurasi aplikasi seperti database, routes, dsb.
-- Filters/, Helpers/, Libraries/: Untuk fungsi tambahan.
+- Controllers: Di ``app/Controllers/``, berisi file PHP yang menangani permintaan (request) dari pengguna dan menentukan apa yang akan ditampilkan.
+- Models: Di ``app/Models/``, untuk berinteraksi dengan database (CRUD).
+- Views: Di ``app/Views/``, berisi file tampilan (HTML/Blade) yang ditampilkan ke pengguna.
+- ``Config/``: Konfigurasi aplikasi seperti database, routes, dsb.
+- ``Filters/``, ``Helpers/``, ``Libraries/``: Untuk fungsi tambahan.
 
 📁 ``public/``
 Ini adalah root direktori web server (dokumen publik).
 - Berisi file index.php, gambar, CSS, JS, dan file statis lainnya.
 - Kamu akan mengakses aplikasi dari sini (misalnya: localhost:8080/).
+<br>
 <em>Penting: Jangan letakkan file penting di sini karena bisa diakses publik!</em>
 
 📁 ``system/``
 Inti dari framework CodeIgniter.
 - Berisi semua kode internal yang dibutuhkan untuk menjalankan CodeIgniter.
+<br>
 <em> Jangan ubah file di sini kecuali kamu tahu apa yang kamu lakukan.</em>
 
 📁 ``test/``
@@ -273,4 +275,4 @@ Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
 <br>
 
 
-<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG92Y2xlNWZrdjR1OWZhaDlncDB1MnF4aTJsNjRqNzdhdTgxeWFubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/CrP27Dg38CEv5AXd53/giphy.gif" width="120" height="120" alt="Description"/>
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG92Y2xlNWZrdjR1OWZhaDlncDB1MnF4aTJsNjRqNzdhdTgxeWFubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/CrP27Dg38CEv5AXd53/giphy.gif"  style="width: 300px; height: auto;" alt="Description"/>
