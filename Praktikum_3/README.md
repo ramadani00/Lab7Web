@@ -12,8 +12,12 @@
     <li><a href="#persiapan">📌 Persiapan</a></li>
     <li><a href="#membuat-layout-utama">🗂️ Membuat Layout Utama</a></li>
     <li><a href="#membuat-file-view">📝 Membuat File View</a></li>
+    <li><a href="#menampilkan-data-dinamis-dengan-view-cell">🔄 Menampilkan Data Dinamis dengan View Cell</a></li>
     <li><a href="#membuat-class-view-cell">🔧 Membuat Class View Cell</a></li>
     <li><a href="#membuat-view-untuk-view-cell">🖼️ Membuat View untuk View Cell</a></li>
+    <li><a href="#menambahkan-field-tanggal">🕒 Menambahkan Field Tanggal</a></li>
+    <li><a href="#perbarui-struktur-database">💾 Perbarui Struktur Database</a></li>
+    <li><a href="#perbarui-model-artikel">🛠️ Perbarui Model Artikel</a></li>
     <li><a href="#view-cell">🔲 View Cell</a></li>
   </ul>
 </div>
@@ -83,7 +87,7 @@ Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep p
 <br>
 
 ## Membuat File View
-- Ubah ``app/Views/home.php`` agagr sesuai dengan layout baru :
+- Ubah ``app/Views/home.php`` agar sesuai dengan layout baru :
 
 ```php
 <?= $this->extend('layout/main') ?>
@@ -98,6 +102,12 @@ Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep p
 
 ![img2](assets/img/homephp.png)
 <br>
+Sesuaikan juga untuk halaman lainnya yang ingin menggunakan format layout yang baru.
+<br>
+
+## Menampilkan Data Dinamis dengan View Cell
+View Cell adalah fitur yang memungkinkan pemanggilan tampilan dalam bentuk komponen yang dapat digunakan ulang. Cocok digunakan untuk elemen-elemen yang sering muncul di berbagai halaman seperti sidebar, widget, atau menu navigasi.
+
 
 <br>
 
@@ -148,13 +158,58 @@ class ArtikelTerkini
 ```
 
 <br>
+
 ![img4](assets/img/artikel_terkini.png)
 <br>
 
 <br>
 
+## Menambahkan field Tanggal
+Sesuaikan data dengan praktikum sebelumnya, perlu melakukan perubahan field pada database dengan menambahkan tanggal agar dapat mengambil data artikel terbaru.
+
+<br>
+
+## Perbarui Struktur Database
+Langkah ini bertujuan untuk menambahkan kolom baru ke dalam tabel artikel di database Anda. Kolom tersebut akan menyimpan data tanggal dalam format ``DATETIME``.
+
+```sql
+ALTER TABLE artikel ADD COLUMN tanggal DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+```
+
+<br>
+
+![img4](assets/img/addtanggal.png)
+<br>
+
+<br>
+
+## Perbarui Model Artikel
+Setelah struktur tabel diperbarui, Anda perlu memastikan bahwa model ``ArtikelModel`` yang digunakan dalam aplikasi telah diperbarui untuk mendukung kolom baru ini. 
+- Terletak pada ``app/Models/`` ubah file ``ArtikelModel.php``.
+
+```php
+<?php
+namespace App\Models;
+use CodeIgniter\Model;
+
+class ArtikelModel extends Model
+{
+    protected $table = 'artikel';
+    protected $primaryKey = 'id';
+    protected $useAutoIncrement = true;
+    protected $allowedFields = ['judul', 'isi', 'status', 'slug', 'gambar', 'tanggal'];
+}
+```
+
+<br>
+
+![img4](assets/img/artikelmodel.png)
+<br>
+
+
+
 ## View Cell
-Berikut adalah tampilan ``view cells`` di setiap page.
+Berikut adalah tampilan ``view cells`` di setiap page. Cell ``Artikel Terkini`` bisa dilihat di semua page layout sebelah kanan beserta tanggal dibuat.
 
 - Page ``Home``
 <br>
