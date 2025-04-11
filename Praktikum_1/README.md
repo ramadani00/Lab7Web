@@ -1,5 +1,9 @@
 
-# <spaan style="color: blue">Praktikum 1 | PHP Framework (Codeigniter)</span>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif" width="120" height="120" alt="Description"/>
+
+
+
+# <spaan style="color: blue">Praktikum 1 | PHP Framework (Codeigniter)</span><br>
 
 ## Persiapan :
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi
@@ -22,6 +26,8 @@ diaktifkan. Kemudian simpan kembali filenya dan restart Apache web server.
 
 ![img2](assets/img/ekstensi_php.png)
 
+<br>
+
 ## Instalasi  Codeigniter 4
 Langkah ini adalah proses instalasi framework Codeigniter 4 secara manual. Framework ini digunakan untuk mempermudah pengembangan aplikasi berbasis PHP. Untuk melakukan instalasi Codeigniter 4 dapat dilakukan dengan dua cara, yaitu cara manual dan menggunakan composer. Pada praktikum ini kita menggunakan cara manual.
 - Unduh Codeigniter dari website https://codeigniter.com/download
@@ -30,6 +36,8 @@ Langkah ini adalah proses instalasi framework Codeigniter 4 secara manual. Frame
 - Buka browser dengan alamat http://localhost/lab11_ci/ci4/public/
 
 ![img3](assets/img/codeigniter.png)
+
+<br>
 
 ## Menjalankan CLI (Command Line Interface)
 Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk mengakses CLI buka terminal/command prompt.
@@ -44,6 +52,8 @@ php spark
 ```
 
 ![img5](assets/img/cli2.png)
+
+<br>
 
 ## Mengaktifkan Mode Debugging
 Mode debugging memungkinkan untuk melihat pesan error secara detail. 
@@ -60,16 +70,52 @@ Mode debugging memungkinkan untuk melihat pesan error secara detail.
 
 ![img9](assets/img/konfigurasi_ci.png)
 
+<br>
 
 ## Struktur Direktori
 Memahami struktur direktori Codeigniter sangat penting agar tahu di mana harus menyimpan file seperti controller, model, view, dan file statis.
 
+📁 ``app/``
+Direktori utama untuk pengembangan aplikasi. Di sinilah kamu akan menyimpan:
+- Controllers: Di app/Controllers/, berisi file PHP yang menangani permintaan (request) dari pengguna dan menentukan apa yang akan ditampilkan.
+- Models: Di app/Models/, untuk berinteraksi dengan database (CRUD).
+- Views: Di app/Views/, berisi file tampilan (HTML/Blade) yang ditampilkan ke pengguna.
+- Config/: Konfigurasi aplikasi seperti database, routes, dsb.
+- Filters/, Helpers/, Libraries/: Untuk fungsi tambahan.
+
+📁 ``public/``
+Ini adalah root direktori web server (dokumen publik).
+- Berisi file index.php, gambar, CSS, JS, dan file statis lainnya.
+- Kamu akan mengakses aplikasi dari sini (misalnya: localhost:8080/).
+<em>Penting: Jangan letakkan file penting di sini karena bisa diakses publik!</em>
+
+📁 ``system/``
+Inti dari framework CodeIgniter.
+- Berisi semua kode internal yang dibutuhkan untuk menjalankan CodeIgniter.
+<em> Jangan ubah file di sini kecuali kamu tahu apa yang kamu lakukan.</em>
+
+📁 ``test/``
+Folder ini digunakan untuk testing aplikasi menggunakan PHPUnit.
+
+📁 ``writable``
+Folder untuk file yang perlu bisa ditulis sistem (write permission):
+- ``cache/``: Penyimpanan cache sementara.
+- ``logs/``: Catatan log error atau debugging.
+- ``uploads/``: Tempat menyimpan file hasil upload (opsional).
+
+📄 ``env``
+File konfigurasi environment. Ubah nama menjadi ``.env`` untuk mengaktifkannya dan sesuaikan dengan kebutuhan, seperti konfigurasi database, mode development/production, dll.
+
 ![img11](assets/img/sdir.png)
+
+<br>
 
 ## Routing and Controller
 Routing digunakan untuk menentukan URL endpoint mana yang akan diarahkan ke controller tertentu. Controller menangani logika aplikasi dan menghubungkan antara model dan view.
 
 Router terletak pada file ``app/config/Routes.php``
+
+<br>
 
 ## Membuat Route Baru
 Tambahkan kode berikut di dalam ``Routes.php``
@@ -91,6 +137,8 @@ php spark routes
 Selanjutnya coba akses route yang telah dibuat dengan mengakses alamat url http://localhost:8080/about
 
 ![img8](assets/img/aboutnotfound.png)
+
+<br>
 
 ## Membuat Controller
 Selanjutnya adalah membuat Controller Page. Buat file baru dengan nama ``page.php`` pada direktori Controller kemudian isi kodenya seperti berikut.
@@ -138,6 +186,8 @@ Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan
 
 ![img8](assets/img/controllerpage.png)
 
+<br>
+
 ## Membuat View
 Selanjutnya adalah membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan nama ``about.php`` pada direktori view ``(app/view/about.php)`` kemudian isi kodenya seperti berikut.
 ```php
@@ -167,7 +217,10 @@ public function about()
 }
 ```
 Kemudian lakukan refresh pada halaman tersebut.
+
 ![img8](assets/img/iniabout.png)
+
+<br>
 
 ## Membuat Layout Web dengan CSS
 Buat file css pada direktori ``public`` dengan nama ``style.css`` (copy file dari praktikum ``lab4_layout``. Kita akan gunakan layout yang pernah dibuat pada praktikum 4.
@@ -203,6 +256,7 @@ File ``app/view/template/footer.php``
 ![img8](assets/img/footer.png)
 
 Kemudian ubah file ``app/view/about.php`` seperti berikut.
+
 ```php
 <?= $this->include('template/header'); ?>
 <h1><?= $title; ?></h1>
@@ -216,3 +270,7 @@ Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
 
 ![img8](assets/img/layout_view.png)
 
+<br>
+
+
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG92Y2xlNWZrdjR1OWZhaDlncDB1MnF4aTJsNjRqNzdhdTgxeWFubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/CrP27Dg38CEv5AXd53/giphy.gif" width="120" height="120" alt="Description"/>
