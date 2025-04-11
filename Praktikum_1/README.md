@@ -8,6 +8,20 @@
 
 <br>
 
+## 📚 Daftar Isi
+
+- [Persiapan](#persiapan-)
+- [Instalasi Codeigniter 4](#instalasi--codeigniter-4)
+- [Menjalankan CLI (Command Line Interface)](#menjalankan-cli-command-line-interface)
+- [Mengaktifkan Mode Debugging](#mengaktifkan-mode-debugging)
+- [Struktur Direktori](#struktur-direktori)
+- [Routing and Controller](#routing-and-controller)
+- [Membuat Route Baru](#membuat-route-baru)
+- [Membuat Controller](#membuat-controller)
+- [Membuat View](#membuat-view)
+- [Membuat Layout Web dengan CSS](#membuat-layout-web-dengan-css)
+
+
 ## Persiapan :
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi
 pada webserver. Beberapa ekstensi PHP perlu diaktifkan untuk kebutuhan
