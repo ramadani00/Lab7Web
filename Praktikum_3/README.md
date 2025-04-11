@@ -18,7 +18,7 @@
     <li><a href="#menambahkan-field-tanggal">🕒 Menambahkan Field Tanggal</a></li>
     <li><a href="#perbarui-struktur-database">💾 Perbarui Struktur Database</a></li>
     <li><a href="#perbarui-model-artikel">🛠️ Perbarui Model Artikel</a></li>
-    <li><a href="#view-cell">🔲 View Cell</a></li>
+    <li><a href="#tampilan-view-cell">🔲Tampilan View Cell</a></li>
   </ul>
 </div>
 
@@ -209,7 +209,7 @@ class ArtikelModel extends Model
 
 
 ## View Cell
-Berikut adalah tampilan ``view cells`` di setiap page. Cell ``Artikel Terkini`` bisa dilihat di semua page layout sebelah kanan beserta tanggal dibuat.
+Berikut adalah tampilan ``View Cell`` di setiap halaman. Komponen ``Artikel Terkin``i`` ditampilkan di sisi kanan layout pada seluruh halaman, lengkap dengan tanggal publikasinya."
 
 - Page ``Home``
 <br>
