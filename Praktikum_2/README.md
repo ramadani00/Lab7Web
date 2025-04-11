@@ -3,7 +3,6 @@
 
 ### Dini Ramadani | Universitas Pelita Bangsa
 
-
 <h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 2 | Framework Lanjutan (CRUD)</h1>
 
 <br>
@@ -12,8 +11,10 @@
 
 Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah database server menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan melalui XAMPP. XAMPP adalah perangkat lunak untuk menyediakan server lokal. Apache digunakan sebagai server web, dan MySQL digunakan sebagai server database untuk menyimpan data aplikasi CRUD.
 
+<br>
+
 ## Membuat Database
-Database adalah tempat penyimpanan data aplikasi. Tabel artikel dibuat menggunakan perintah ``SQL CREATE TABLE`` dengan kolom id, judul, isi, gambar, status, dan slug. Kolom id adalah primary key yang secara otomatis bertambah (auto_increment).
+Database adalah tempat penyimpanan data aplikasi. Tabel artikel dibuat menggunakan perintah ``SQL CREATE TABLE`` dengan kolom ``id``, ``judul``, ``isi``, ``gambar``, ``status``, dan ``slug``. Kolom id adalah primary key yang secara otomatis bertambah (auto_increment).
 - Jalankan ``Apache, MySql`` pada Xampp, Buat database dengan nama ``lab_ci4`` di http://localhost/phpmyadmin.
 - Buat tabel dengan nama ``artikel``.
   
@@ -32,18 +33,20 @@ Database adalah tempat penyimpanan data aplikasi. Tabel artikel dibuat menggunak
 ![img1](assets/img/create_table.png)
 <br>
 
+<br>
 
 ## Konfigurasi Koneksi Database
-Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan dua acara, yaitu pada file app/config/database.php atau menggunakan  file .env. File .env adalah file konfigurasi untuk menyimpan pengaturan seperti nama database, pengguna, dan kata sandi. Menghapus tanda # di depan konfigurasi database akan mengaktifkan pengaturan tersebut.
+Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan dua acara, yaitu pada ``file app/config/database.php`` atau menggunakan  file ``.env``. File ``.env`` adalah file konfigurasi untuk menyimpan pengaturan seperti nama database, pengguna, dan kata sandi. Menghapus tanda # di depan konfigurasi database akan mengaktifkan pengaturan tersebut.
 
 - Terletak di folder ``ci4``, file `.env`, Hapus tanda `#`.
-  
+<br>
 ![img2](assets/img/koneksi_db.png)
 <br>
 
+<br>
 
 ## Membuat Model 
-Selanjutnya adalah membuat Model untuk memproses data Artikel. Model adalah komponen yang bertugas untuk berinteraksi langsung dengan database. ArtikelModel digunakan untuk memproses data dari tabel artikel. Properti seperti $table menentukan nama tabel, dan $allowedFields menentukan kolom yang dapat diakses.
+Selanjutnya adalah membuat Model untuk memproses data Artikel. Model adalah komponen yang bertugas untuk berinteraksi langsung dengan database. ArtikelModel digunakan untuk memproses data dari tabel artikel. Properti seperti ``$table`` menentukan nama tabel, dan ``$allowedFields`` menentukan kolom yang dapat diakses.
 - Buat file baru pada direktori ``app/Models`` dengan nama ``ArtikelModel.php``
   
   ```php
@@ -62,6 +65,7 @@ Selanjutnya adalah membuat Model untuk memproses data Artikel. Model adalah komp
 ![img3](assets/img/membuat_model.png)
 <br>
 
+<br>
 
 ## Membuat Controller
 Controller adalah komponen yang mengatur logika aplikasi dan menghubungkan model dengan view. Fungsi ``index()`` memanggil semua data artikel dari model dan mengirimkannya ke view untuk ditampilkan.
@@ -83,6 +87,8 @@ Controller adalah komponen yang mengatur logika aplikasi dan menghubungkan model
     }
   ```
 ![img4](assets/img/membuat_controller.png)
+<br>
+
 <br>
 
 ## Membuat View pada artikel
@@ -121,15 +127,8 @@ View adalah bagian yang bertugas menampilkan data kepada pengguna dalam bentuk H
   
     ```sql
     INSERT INTO artikel (judul, isi, slug) VALUE
-    ('Artikel pertama', 'Lorem Ipsum adalah contoh teks atau dummy dalam industri 
-    percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi 
-    standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak 
-    dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah 
-    buku contoh huruf.', 'artikel-pertama'), 
-    ('Artikel kedua', 'Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah 
-    teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari 
-    era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih 
-    dari 2000 tahun.', 'artikel-kedua');
+    ('Artikel pertama', 'Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf.', 'artikel-pertama'), ('Artikel kedua', 'Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah 
+    teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih dari 2000 tahun.', 'artikel-kedua');
     ```
     
 ![img7](assets/img/insert_artikel.png)
@@ -138,6 +137,8 @@ View adalah bagian yang bertugas menampilkan data kepada pengguna dalam bentuk H
 - Refresh kembali browser.
   
 ![img8](assets/img/artikel.png)
+<br>
+
 <br>
 
 ## Membuat Tampilan detail Artikel
@@ -164,6 +165,7 @@ public function view($slug)
 ![img9](assets/img/detail_artikel.png)
 <br>
 
+<br>
 
 ## Membuat View pada Detail
 - Terletak di folder `app/Views/artikel`, buat file `detail.php`.
@@ -183,6 +185,7 @@ public function view($slug)
 ![img10](assets/img/detail_php.png)
 <br>
 
+<br>
 
 ## Membuat Routing untuk artikel detail
 - Terletak di folder `app/Config`, edit file `Routes.php`.
@@ -194,6 +197,7 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 ![img11](assets/img/artikelkedua.png)
 <br>
 
+<br>
 
 ## Membuat Menu admin
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `admin_index()`.
@@ -291,6 +295,7 @@ public function admin_index()
 <br>
 
 - ``admin_footer.php``
+
   ```php
                   </section>
             </section>
@@ -305,6 +310,7 @@ public function admin_index()
 ![img15](assets/img/admin_footer.png)
 <br>
 
+<br>
 
 ## Membuat Routing untuk menu admin
 - Terletak di folder `app/Config`, edit file `Routes.php`.
@@ -315,6 +321,8 @@ public function admin_index()
 - Akses browser dengan http://localhost:8080/admin/artikel.
   
 ![img17](assets/img/admin_artikel.png)
+<br>
+
 <br>
 
 ## Menambah data untuk Artikel
@@ -376,6 +384,7 @@ public function add()
 ![img26](assets/img/view_add2.png)
 <br>
 
+<br>
 
 ## Mengubah data pada Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `edit()`.
@@ -435,6 +444,7 @@ public function edit($id)
 ![img23](assets/img/edit_view.png)
 <br>
 
+<br>
 
 ## Menghapus data pada Artikel
 - Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `delete()`.
@@ -451,7 +461,7 @@ public function edit($id)
 <br>
 
 - Pergi ke menu admin untuk menghapusnya, http://localhost:8080/admin/artikel, kemudian pilih `hapus`.
-- 
+
 ![img27](assets/img/view_delete.png)
 <br>
 
