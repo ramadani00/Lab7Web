@@ -1,11 +1,16 @@
-# <span style="color: blue">Praktikum 3 | View Layout dan View Cell</span>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  style="width: 500px; height: auto;" alt="Description"/>
 
+### Dini Ramadani | Universitas Pelita Bangsa
+
+<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 3 | View Layout dan View Cell</h1>
+
+<br>
 
 
 ## Persiapan :
-
 Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep parsial atau memecah bagian template menjadi beberapa bagian untuk kemudian di include pada view yang lain. Praktikum kali ini kita akan mengunakan konsep View Layout dan View Cell untuk memudahkan dalam penggunaan layout.
 
+<br>
 
 ## Membuat Layout Utama
 - Buat folder ``layout`` di dalam ``app/Views/``.
@@ -61,6 +66,7 @@ Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep p
 ![img1](assets/img/mainphp.png)
 <br>
 
+<br>
 
 ## Membuat File View
 - Ubah ``app/Views/home.php`` agagr sesuai dengan layout baru :
@@ -79,6 +85,7 @@ Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep p
 ![img2](assets/img/homephp.png)
 <br>
 
+<br>
 
 ## Membuat Class View Cell
 - Buat folder ``Cells`` di dalam ``app/``
@@ -104,6 +111,7 @@ class ArtikelTerkini
 ![img3](assets/img/artikelterkiniphp.png)
 <br>
 
+<br>
 
 ## Membuat View untuk View Cell
 - Buat folder ``components`` di dalam ``app/Views/``
@@ -125,22 +133,33 @@ class ArtikelTerkini
 </div>
 ```
 
+<br>
 ![img4](assets/img/artikel_terkini.png)
 <br>
 
+<br>
 
+## View Cell
+Berikut adalah tampilan ``view cells`` di setiap page.
+
+- Page ``Home``
+<br>
 
 ![img5](assets/img/dashboard.png)
 <br>
 
+- Page ``Artikel``
+<br>
 
 ![img6](assets/img/artikel.png)
 <br>
 
+- Page ``About``
+<br>
 
 ![img7](assets/img/about.png)
 <br>
 
-
+- Page ``Kontak``
 ![img8](assets/img/kontak.png)
 <br>
