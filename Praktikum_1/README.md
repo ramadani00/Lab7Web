@@ -190,7 +190,7 @@ Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan
 <br>
 
 ## Membuat View
-Selanjutnya adalah membuat view untuk tampilan web agar lebih menarik. Buat file baru dengan nama ``about.php`` pada direktori view ``(app/view/about.php)`` kemudian isi kodenya seperti berikut.
+Selanjutnya adalah membuat view, buat file baru dengan nama ``about.php`` pada direktori view ``(app/view/about.php)`` kemudian isi kodenya seperti berikut.
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -224,7 +224,7 @@ Kemudian lakukan refresh pada halaman tersebut.
 <br>
 
 ## Membuat Layout Web dengan CSS
-Buat file css pada direktori ``public`` dengan nama ``style.css`` (copy file dari praktikum ``lab4_layout``. Kita akan gunakan layout yang pernah dibuat pada praktikum 4.
+Buat file css pada direktori ``public`` dengan nama ``style.css`` (copy file dari praktikum ``lab4_layout``).
 
 ![img8](assets/img/css.png)
 
