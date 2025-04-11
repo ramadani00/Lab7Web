@@ -2,7 +2,7 @@
 
 ### Dini Ramadani | Universitas Pelita Bangsa
 
-<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 3 | View Layout dan View Cell</h1>
+<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 3 Part 1 | View Layout dan View Cell</h1>
 
 <br>
 
