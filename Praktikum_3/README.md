@@ -6,6 +6,20 @@
 
 <br>
 
+<div class="navbar">
+  <h2>📚 Daftar Isi</h2>
+  <ul class="toc-list">
+    <li><a href="#persiapan">📌 Persiapan</a></li>
+    <li><a href="#membuat-layout-utama">🗂️ Membuat Layout Utama</a></li>
+    <li><a href="#membuat-file-view">📝 Membuat File View</a></li>
+    <li><a href="#membuat-class-view-cell">🔧 Membuat Class View Cell</a></li>
+    <li><a href="#membuat-view-untuk-view-cell">🖼️ Membuat View untuk View Cell</a></li>
+    <li><a href="#view-cell">🔲 View Cell</a></li>
+  </ul>
+</div>
+
+
+<br>
 
 ## Persiapan :
 Pada praktikum sebelumnya kita telah menggunakan template layout dengan konsep parsial atau memecah bagian template menjadi beberapa bagian untuk kemudian di include pada view yang lain. Praktikum kali ini kita akan mengunakan konsep View Layout dan View Cell untuk memudahkan dalam penggunaan layout.
@@ -161,5 +175,7 @@ Berikut adalah tampilan ``view cells`` di setiap page.
 <br>
 
 - Page ``Kontak``
+<br>
+
 ![img8](assets/img/kontak.png)
 <br>
