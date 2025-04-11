@@ -1,6 +1,7 @@
 
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  style="width: 300px; height: auto;" alt="Description"/>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  style="width: 500px; height: auto;" alt="Description"/>
 
+### Dini Ramadani | Universitas Pelita Banggsa
 
 
 # <spaan style="color: blue">Praktikum 1 | PHP Framework (Codeigniter)</span><br>
@@ -274,5 +275,9 @@ Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
 
 <br>
 
+<br>
 
-<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG92Y2xlNWZrdjR1OWZhaDlncDB1MnF4aTJsNjRqNzdhdTgxeWFubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/CrP27Dg38CEv5AXd53/giphy.gif"  style="width: 300px; height: auto;" alt="Description"/>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG92Y2xlNWZrdjR1OWZhaDlncDB1MnF4aTJsNjRqNzdhdTgxeWFubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/CrP27Dg38CEv5AXd53/giphy.gif" style="width: 400px; height: auto;" alt="Description"/>
+</div>
+
