@@ -1,3 +1,7 @@
+
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG5ibjJlM3pjM2hjeXV1aDFqbnJ6bG9kOGlrYnQ0MHVxcTdtODY5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/sq0latH6XSHN4FsIo1/giphy.gif" width="120" height="120" alt="Description"/>
+
+
 # Lab7Web
 
 |  | |
@@ -34,3 +38,5 @@
 </table>_________________________________________________________________________________
 _________________________________________________________________________________
 <div id="p11">
+
+
