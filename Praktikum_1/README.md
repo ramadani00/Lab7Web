@@ -81,7 +81,7 @@ Memahami struktur direktori Codeigniter sangat penting agar tahu di mana harus m
 ![img11](assets/img/sdir.png)
 <br>
 
-📁 ``app/``
+📁 ``app/`` : 
 Direktori utama untuk pengembangan aplikasi. Di sinilah kamu akan menyimpan:
 - ``app/Controllers/`` : berisi file PHP yang menangani permintaan (request) dari pengguna dan menentukan apa yang akan ditampilkan.
 - ``app/Models/`` : untuk berinteraksi dengan database (CRUD).
@@ -89,27 +89,27 @@ Direktori utama untuk pengembangan aplikasi. Di sinilah kamu akan menyimpan:
 - ``Config/``: konfigurasi aplikasi seperti database, routes, dsb.
 - ``Filters/``, ``Helpers/``, ``Libraries/``: Untuk fungsi tambahan.
 
-📁 ``public/``
+📁 ``public/`` : 
 Ini adalah root direktori web server (dokumen publik).
 - Berisi file ``index.php``, gambar, CSS, JS, dan file statis lainnya.
 - Kamu akan mengakses aplikasi dari sini (misalnya: localhost:8080/).
 - <em>Penting: Jangan letakkan file penting di sini karena bisa diakses publik!</em><br>
 
-📁 ``system/``
+📁 ``system/`` : 
 Inti dari framework CodeIgniter.
 - Berisi semua kode internal yang dibutuhkan untuk menjalankan CodeIgniter.
 - <em> Jangan ubah file di sini kecuali kamu tahu apa yang kamu lakukan.</em><br>
 
-📁 ``test/``
+📁 ``test/`` : 
 Folder ini digunakan untuk testing aplikasi menggunakan PHPUnit.
 
-📁 ``writable``
+📁 ``writable`` : 
 Folder untuk menyimpan file yang perlu dimodifikasi/ditulis oleh sistem (write permission):
 - ``cache/``: Penyimpanan cache sementara.
 - ``logs/``: Catatan log error atau debugging.
 - ``uploads/``: Tempat menyimpan file hasil upload (opsional).
 
-📄 ``env``
+📄 ``env`` : 
 File konfigurasi environment. Ubah nama menjadi ``.env`` untuk mengaktifkannya dan sesuaikan dengan kebutuhan, seperti konfigurasi database, mode development/production, dll.
 
 
@@ -119,7 +119,6 @@ File konfigurasi environment. Ubah nama menjadi ``.env`` untuk mengaktifkannya d
 Routing digunakan untuk menentukan URL endpoint mana yang akan diarahkan ke controller tertentu. Controller menangani logika aplikasi dan menghubungkan antara model dan view.
 
 Router terletak pada file ``app/config/Routes.php``
-
 <br>
 
 ## Membuat Route Baru
@@ -279,7 +278,8 @@ Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
 
 <br>
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG92Y2xlNWZrdjR1OWZhaDlncDB1MnF4aTJsNjRqNzdhdTgxeWFubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/CrP27Dg38CEv5AXd53/giphy.gif" style="width: 400px; height: auto;" alt="Description"/>
-</div>
-
+  <div class="centered">
+    <img src="https://media.giphy.com/media/XLx9jXZXzm8Sv415Tf/giphy.gif?cid=ecf05e47hk6i4tunpqmceczwxjzujix9sxxpbjv2f4woa33v&ep=v1_stickers_search&rid=giphy.gif&ct=s" 
+         style="width: 400px; height: auto;" 
+         alt="Description"/>
+  </div>
