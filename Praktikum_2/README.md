@@ -1,5 +1,12 @@
-# <span style="color: blue">Praktikum 2 | Framework Lanjutan (CRUD)</span>
 
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  style="width: 500px; height: auto;" alt="Description"/>
+
+### Dini Ramadani | Universitas Pelita Bangsa
+
+
+<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 2 | Framework Lanjutan (CRUD)</h1>
+
+<br>
 
 ## Persiapan :
 
@@ -453,3 +460,15 @@ public function edit($id)
 ![img28](assets/img/view_delete2.png)
 
 <div id="p13">
+
+
+
+<br>
+
+<br>
+
+  <div class="centered">
+    <img src="https://media.giphy.com/media/XLx9jXZXzm8Sv415Tf/giphy.gif?cid=ecf05e47hk6i4tunpqmceczwxjzujix9sxxpbjv2f4woa33v&ep=v1_stickers_search&rid=giphy.gif&ct=s" 
+         style="width: 400px; height: auto;" 
+         alt="Description"/>
+  </div>
