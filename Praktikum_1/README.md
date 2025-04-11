@@ -1,70 +1,13 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Praktikum 1 | PHP Framework (CodeIgniter)</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-    }
-    .content {
-      flex: 1;
-      padding: 40px;
-      max-width: 70%;
-    }
-    .navbar {
-      width: 30%;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-left: 2px solid #ddd;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow-y: auto;
-    }
-    .navbar strong {
-      display: block;
-      margin-bottom: 10px;
-    }
-    .navbar a {
-      display: block;
-      margin: 6px 0;
-      text-decoration: none;
-      color: #007bff;
-    }
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-    .centered {
-      text-align: center;
-      margin-top: 20px;
-    }
-    h1.title {
-      color: blue;
-      font-size: 36px;
-      text-align: center;
-      margin-top: 20px;
-    }
-    .author {
-      text-align: center;
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-  </style>
-</head>
-<body>
 
-<div class="content">
-    <div class="author">
-      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif" style="width: 200px; height: auto;" alt="Dini Ramadani"/>
-      <p><strong>Dini Ramadani | Universitas Pelita Bangsa</strong></p>
-    </div>
-</div>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  style="width: 500px; height: auto;" alt="Description"/>
 
+### Dini Ramadani | Universitas Pelita Bangsa
 
-  <div class="navbar">
+<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 1 | PHP Framework (Codeigniter)</h1>
+U
+<br>
+
+   <div class="navbar">
     <strong>📚 Daftar Isi:</strong>
     <a href="#persiapan-">Persiapan</a>
     <a href="#instalasi--codeigniter-4">Instalasi</a>
@@ -77,6 +20,8 @@
     <a href="#membuat-view">View</a>
     <a href="#membuat-layout-web-dengan-css">CSS Layout</a>
   </div>
+
+<br>
 
 ## Persiapan :
 Sebelum memulai menggunakan Framework Codeigniter, perlu dilakukan konfigurasi
@@ -350,6 +295,3 @@ Selanjutnya refresh tampilan pada alamat http://localhost:8080/about
          style="width: 400px; height: auto;" 
          alt="Description"/>
   </div>
-
-</body>
-</html>
