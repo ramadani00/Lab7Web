@@ -78,6 +78,9 @@ Mode debugging memungkinkan untuk melihat pesan error secara detail.
 ## Struktur Direktori
 Memahami struktur direktori Codeigniter sangat penting agar tahu di mana harus menyimpan file seperti controller, model, view, dan file statis.
 
+![img11](assets/img/sdir.png)
+<br>
+
 📁 ``app/``
 Direktori utama untuk pengembangan aplikasi. Di sinilah kamu akan menyimpan:
 - ``app/Controllers/`` : berisi file PHP yang menangani permintaan (request) dari pengguna dan menentukan apa yang akan ditampilkan.
@@ -101,7 +104,7 @@ Inti dari framework CodeIgniter.
 Folder ini digunakan untuk testing aplikasi menggunakan PHPUnit.
 
 📁 ``writable``
-Folder untuk file yang perlu bisa ditulis sistem (write permission):
+Folder untuk menyimpan file-file yang perlu dimodifikasi (ditulis) oleh sistem secara otomatis saat aplikasi berjalan (write permission):
 - ``cache/``: Penyimpanan cache sementara.
 - ``logs/``: Catatan log error atau debugging.
 - ``uploads/``: Tempat menyimpan file hasil upload (opsional).
@@ -109,7 +112,6 @@ Folder untuk file yang perlu bisa ditulis sistem (write permission):
 📄 ``env``
 File konfigurasi environment. Ubah nama menjadi ``.env`` untuk mengaktifkannya dan sesuaikan dengan kebutuhan, seperti konfigurasi database, mode development/production, dll.
 
-![img11](assets/img/sdir.png)
 
 <br>
 
