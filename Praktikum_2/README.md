@@ -7,6 +7,28 @@
 
 <br>
 
+
+<div class="navbar">
+  <h2>📚 Daftar Isi</h2>
+  <ul class="toc-list">
+    <li><a href="#persiapan-">📌 Persiapan</a></li>
+    <li><a href="#membuat-database">🗃️ Membuat Database</a></li>
+    <li><a href="#konfigurasi-koneksi-database">🔌 Konfigurasi Koneksi Database</a></li>
+    <li><a href="#membuat-model">📦 Membuat Model</a></li>
+    <li><a href="#membuat-controller">🔧 Membuat Controller</a></li>
+    <li><a href="#membuat-view-pada-artikel">🖼️ Membuat View pada Artikel</a></li>
+    <li><a href="#membuat-tampilan-detail-artikel">📄 Membuat Tampilan Detail Artikel</a></li>
+    <li><a href="#membuat-view-pada-detail">👁️ Membuat View pada Detail</a></li>
+    <li><a href="#membuat-routing-untuk-artikel-detail">🗺️ Membuat Routing untuk Artikel Detail</a></li>
+    <li><a href="#membuat-menu-admin">🛠️ Membuat Menu Admin</a></li>
+    <li><a href="#membuat-routing-untuk-menu-admin">🧭 Membuat Routing untuk Menu Admin</a></li>
+    <li><a href="#menambah-data-untuk-artikel">➕ Menambah Data untuk Artikel</a></li>
+    <li><a href="#mengubah-data-pada-artikel">✏️ Mengubah Data pada Artikel</a></li>
+  </ul>
+</div>
+
+<br>
+
 ## Persiapan :
 
 Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah database server menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan melalui XAMPP. XAMPP adalah perangkat lunak untuk menyediakan server lokal. Apache digunakan sebagai server web, dan MySQL digunakan sebagai server database untuk menyimpan data aplikasi CRUD.
