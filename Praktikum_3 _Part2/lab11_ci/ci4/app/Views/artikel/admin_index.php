@@ -27,7 +27,7 @@
                             <?php elseif ($row['kategori'] === 'pendidikan'): ?>
                                 <span class="badge bg-primary">Pendidikan</span>
                             <?php elseif ($row['kategori'] === 'hiburan'): ?>
-                                <span class="badge bg-warning text-dark">Hiburan</span>
+                                <span class="badge bg-pink text-dark">Hiburan</span>
                             <?php else: ?>
                                 <span class="badge bg-secondary">Lainnya</span>
                             <?php endif; ?>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?= $title ?? 'Dini Website' ?></title>
+    <title><?= $title ?? 'Halaman Artikel' ?></title>
     <link rel="stylesheet" href="<?= base_url('/style.css');?>">
 </head>
 <body>

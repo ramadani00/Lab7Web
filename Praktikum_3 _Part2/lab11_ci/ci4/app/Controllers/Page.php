@@ -20,7 +20,7 @@ class Page extends BaseController
     public function contact()
     {
         return view('contact', [
-        'title' => 'Hubungi Kami',
+        'title' => 'Halaman Kontak',
         'content' => 'Kami sangat terbuka untuk kritik, saran, maupun kerja sama. Silakan isi formulir di bawah ini atau hubungi kami melalui informasi berikut:
 
             📧 Email: xxxxx@infoterkini.id
