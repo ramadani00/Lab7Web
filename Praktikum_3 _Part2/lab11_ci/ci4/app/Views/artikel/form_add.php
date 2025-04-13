@@ -20,7 +20,13 @@
             <label for="gambar" class="form-label">Upload Gambar (opsional)</label>
             <input type="file" name="gambar" id="gambar" class="form-control" accept="image/*">
         </div>
-
+        <p>
+            <select name="kategori" class="form-control">
+                <option value="teknologi">Teknologi</option>
+                <option value="pendidikan">Pendidikan</option>
+                <option value="hiburan">Hiburan</option>
+            </select>
+        </p>
         <button type="submit" name="upload" class="btn btn-primary">Kirim</button>
     </form>
 </div>

@@ -6,7 +6,8 @@
         <thead class="table-primary text-center">
             <tr>
                 <th style="width: 5%;">ID</th>
-                <th style="width: 55%;">Judul & Isi</th>
+                <th style="width: 40%;">Judul & Isi</th>
+                <th style="width: 15%;">Kategori</th>
                 <th style="width: 15%;">Status</th>
                 <th style="width: 25%;">Aksi</th>
             </tr>
@@ -20,6 +21,7 @@
                             <strong><?= esc($row['judul']); ?></strong>
                             <p class="mb-0"><small><?= esc(substr($row['isi'], 0, 50)); ?>...</small></p>
                         </td>
+                        <td class="text-center"><?= esc($row['kategori']); ?></td>
                         <td class="text-center">
                             <?php if ($row['status'] === 'publish'): ?>
                                 <span class="badge bg-success">
@@ -45,15 +47,16 @@
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="4" class="text-center">Belum ada data artikel.</td>
+                    <td colspan="5" class="text-center">Belum ada data artikel.</td>
                 </tr>
             <?php endif; ?>
         </tbody>
         <tfoot class="table-light text-center">
             <tr>
                 <th style="width: 5%;">ID</th>
-                <th style="width: 50%;">Judul & Isi</th>
-                <th style="width: 20%;">Status</th>
+                <th style="width: 40%;">Judul & Isi</th>
+                <th style="width: 15%;">Kategori</th>
+                <th style="width: 15%;">Status</th>
                 <th style="width: 25%;">Aksi</th>
             </tr>
         </tfoot>

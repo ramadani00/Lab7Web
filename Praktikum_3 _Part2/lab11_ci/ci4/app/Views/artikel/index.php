@@ -1,22 +1,36 @@
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
 
-<?php if ($artikel): foreach ($artikel as $row): ?>
-<article class="entry">
-    <h2>
-        <a href="<?= base_url('/artikel/' . $row['slug']); ?>">
-            <?= esc($row['judul']); ?>
-        </a>
-    </h2>
-    <img src="<?= base_url('uploads/' . $row['gambar']); ?>" alt="<?= esc($row['judul']); ?>">
-    <p><?= esc(substr($row['isi'], 0, 200)); ?>...</p>
-    <small>Diterbitkan pada: <?= date('d M Y', strtotime($row['tanggal'])) ?></small>
-</article>
-<hr class="divider" />
-<?php endforeach; else: ?>
-<article class="entry">
-    <h2>Belum ada data.</h2>
-</article>
+<form action="<?= base_url('/artikel'); ?>" method="get" class="mb-4">
+    <select name="kategori" class="form-select" onchange="this.form.submit()">
+        <option value="">Semua Kategori</option>
+        <option value="teknologi" <?= $kategori === 'teknologi' ? 'selected' : ''; ?>>Teknologi</option>
+        <option value="pendidikan" <?= $kategori === 'pendidikan' ? 'selected' : ''; ?>>Pendidikan</option>
+        <option value="hiburan" <?= $kategori === 'hiburan' ? 'selected' : ''; ?>>Hiburan</option>
+    </select>
+</form>
+
+<?php if ($artikel && count($artikel) > 0): ?>
+    <?php foreach ($artikel as $row): ?>
+        <article class="entry mb-4">
+            <h2>
+                <a href="<?= base_url('/artikel/' . esc($row['slug'])); ?>">
+                    <?= esc($row['judul']); ?>
+                </a>
+            </h2>
+            <?php if (!empty($row['gambar'])): ?>
+                <img src="<?= base_url('uploads/' . esc($row['gambar'])); ?>" alt="<?= esc($row['judul']); ?>" class="img-fluid mb-3">
+            <?php endif; ?>
+            <p class="mb-2">Kategori: <strong><?= esc(ucfirst($row['kategori'])); ?></strong></p>
+            <p><?= esc(substr($row['isi'], 0, 200)); ?>...</p>
+            <small class="text-muted">Diterbitkan pada: <?= date('d M Y', strtotime($row['tanggal'] ?? 'now')); ?></small>
+        </article>
+        <hr class="divider">
+    <?php endforeach; ?>
+<?php else: ?>
+    <article class="entry">
+        <h2>Belum ada artikel dalam kategori ini.</h2>
+    </article>
 <?php endif; ?>
 
 <?= $this->endSection() ?>

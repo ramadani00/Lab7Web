@@ -237,6 +237,16 @@ Berikut adalah tampilan ``View Cell`` di setiap halaman. Komponen ``Artikel Terk
 ![img8](assets/img/kontak.png)
 <br>
 
+- Tampilan View Cell Wigdet Ketika di Klik
+<br>
+
+![img8](assets/img/cell1.png)
+<br>
+
+
+![img8](assets/img/cell2.png)
+<br>
+
 <br>
 
 <br>

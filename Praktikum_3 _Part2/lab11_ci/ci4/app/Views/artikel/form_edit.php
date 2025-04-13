@@ -20,7 +20,13 @@
             <label for="gambar" class="form-label">Upload Gambar Baru (opsional)</label>
             <input type="file" name="gambar" id="gambar" class="form-control" accept="image/*">
         </div>
-
+        <p>
+            <select name="kategori" class="form-control">
+                <option value="teknologi" <?= $data['kategori'] == 'teknologi' ? 'selected' : ''; ?>>Teknologi</option>
+                <option value="pendidikan" <?= $data['kategori'] == 'pendidikan' ? 'selected' : ''; ?>>Pendidikan</option>
+                <option value="hiburan" <?= $data['kategori'] == 'hiburan' ? 'selected' : ''; ?>>Hiburan</option>
+            </select>
+        </p>
         <button type="submit" class="btn btn-primary">Kirim</button>
     </form>
 </div>

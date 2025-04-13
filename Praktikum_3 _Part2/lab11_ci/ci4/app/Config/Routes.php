@@ -16,6 +16,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/about', 'Page::about');
 $routes->get('/artikel', 'Artikel::index');
+$routes->get('/artikel/kategori/(:any)', 'Artikel::index/$1');
 $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 $routes->group('admin', function($routes) {
     $routes->get('artikel', 'Artikel::admin_index');
