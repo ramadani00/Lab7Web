@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 use App\Models\ArtikelModel;
+use Parsedown; 
+
 class Artikel extends BaseController
 {
     public function index()
@@ -21,16 +23,21 @@ class Artikel extends BaseController
 
         return view('artikel/index', $data);
     }
+
     public function view($slug)
     {
         $model = new ArtikelModel();
         $artikel = $model->where([
             'slug' => $slug
         ])->first();
-        if (!$artikel) 
-        {
-            throw PageNotFoundException::forPageNotFound();
+
+        if (!$artikel) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
+
+        $parsedown = new Parsedown();
+        $artikel['isi'] = $parsedown->text($artikel['isi']);
+
         $title = $artikel['judul'];
         return view('artikel/detail', compact('artikel', 'title'));
     }
@@ -57,15 +64,12 @@ class Artikel extends BaseController
             ]);
 
             if ($validation->withRequest($this->request)->run()) {
-                // Handle uploaded image
                 $gambar = $this->request->getFile('gambar');
                 $gambarName = null;
                 if ($gambar && $gambar->isValid()) {
                     $gambarName = $gambar->getRandomName();
                     $gambar->move('uploads', $gambarName);
                 }
-
-                // Save data to database
                 $model->insert([
                     'judul' => $this->request->getPost('judul'),
                     'isi' => $this->request->getPost('isi'),
@@ -87,7 +91,6 @@ class Artikel extends BaseController
     {
         $artikel = new ArtikelModel();
     
-        // Validasi data
         $validation = \Config\Services::validation();
         $validation->setRules([
             'judul' => 'required',
@@ -99,16 +102,13 @@ class Artikel extends BaseController
         $isDataValid = $validation->withRequest($this->request)->run();
     
         if ($isDataValid) {
-            // Handle upload gambar jika ada file baru
             $gambar = $this->request->getFile('gambar');
-            $gambarName = $this->request->getPost('gambar_lama'); // Ambil nama gambar lama sebagai default
+            $gambarName = $this->request->getPost('gambar_lama');
     
             if ($gambar && $gambar->isValid()) {
-                $gambarName = $gambar->getRandomName(); // Generate nama acak untuk file baru
-                $gambar->move('uploads', $gambarName); // Pindahkan file ke folder uploads
+                $gambarName = $gambar->getRandomName();
+                $gambar->move('uploads', $gambarName);
             }
-    
-            // Update data artikel
             $artikel->update($id, [
                 'judul' => $this->request->getPost('judul'),
                 'isi' => $this->request->getPost('isi'),
@@ -121,7 +121,6 @@ class Artikel extends BaseController
             return redirect()->to('/admin/artikel')->with('success', 'Artikel berhasil diperbarui.');
         }
     
-        // Ambil data lama
         $data = $artikel->where('id', $id)->first();
         $title = "Edit Artikel";
     
@@ -134,6 +133,7 @@ class Artikel extends BaseController
         $artikel->delete($id);
         return redirect('admin/artikel');
     }
+
     public function terkini()
     {
         $model = new ArtikelModel();
@@ -141,6 +141,4 @@ class Artikel extends BaseController
         $title = 'Artikel Terkini';
         return view('artikel/terkini', compact('artikel', 'title'));
     }
-
-
 }

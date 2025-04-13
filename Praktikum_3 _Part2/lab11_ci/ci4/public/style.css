@@ -118,6 +118,7 @@ nav a.active {
 #wrapper {
     margin: 0;
 }
+
 #main {
     float: left;
     width: 640px;
@@ -162,6 +163,7 @@ nav a.active {
 /* widget */
 .widget-box{
 border:1px solid #eee; 
+margin-top:50px;
 margin-bottom:20px;
 }
 .widget-box 
