@@ -211,7 +211,8 @@ class ArtikelModel extends Model
 
 
 ## Tampilan View Cell
-Berikut adalah tampilan ``View Cell`` di setiap halaman. Komponen ``Artikel Terkini`` ditampilkan di sisi kanan layout pada seluruh halaman, lengkap dengan tanggal publikasinya."
+Berikut adalah tampilan ``View Cell`` di setiap halaman. Komponen ``Artikel Terkini`` ditampilkan di sisi kanan layout pada seluruh halaman, lengkap dengan tanggal publikasinya.
+<br>
 
 
 - Tampilan View Cell Wigdet Ketika di Klik
