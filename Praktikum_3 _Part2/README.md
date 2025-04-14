@@ -12,13 +12,14 @@
   <ul class="toc-list">
     <li><a href="#menampilkan-post-dengan-kategori">📰 Menampilkan Post dengan Kategori</a></li>
     <li><a href="#menambahkan-parameter-kategori">⚙️ Menambahkan Parameter Kategori</a></li>
+    <li><a href="#pastikan-view-menampilkan-data-berdasarkan-kategori">🎨 Pastikan View Menampilkan Data Berdasarkan Kategori</a></li>
+    <li><a href="#menambahkan-dropdown-untuk-memilih-kategori">⬇️ Menambahkan Dropdown untuk Memilih Kategori</a></li>
+    <li><a href="#tampilan-view-cell-dengan-parameter-kategori">🔍 Tampilan View Cell Dengan Parameter Kategori</a></li>
   </ul>
 </div>
-
 <br>
 
-Dalam pengembangan aplikasi berbasis PHP dengan framework seperti CodeIgniter, sering kali kita membutuhkan fitur dinamis untuk menampilkan data tertentu berdasarkan kategori yang dipilih oleh pengguna. Dalam praktikum ini, kita akan membahas langkah-langkah untuk membuat ``View Cell`` yang dapat menampilkan artikel terkini berdasarkan kategori yang diinginkan. ``View Cell**`` adalah fitur yang sangat berguna untuk memisahkan logika kecil tertentu dari controller atau view utama. Dalam kasus ini, kita akan menggunakan View Cell untuk menampilkan artikel terkini berdasarkan kategori.
----
+Dalam pengembangan aplikasi berbasis PHP dengan framework seperti CodeIgniter, sering kali kita membutuhkan fitur dinamis untuk menampilkan data tertentu berdasarkan kategori yang dipilih oleh pengguna. Dalam praktikum ini, kita akan membahas langkah-langkah untuk membuat ``View Cell`` yang dapat menampilkan artikel terkini berdasarkan kategori yang diinginkan. ``View Cell`` adalah fitur yang sangat berguna untuk memisahkan logika kecil tertentu dari controller atau view utama. Dalam kasus ini, kita akan menggunakan View Cell untuk menampilkan artikel terkini berdasarkan kategori.
 
 <br>
 
@@ -114,6 +115,51 @@ Selanjutnya, pastikan bahwa ``view`` yang digunakan oleh ``View Cell`` mendukung
 <br>
 
 ### Tampilan ``View Cell`` Dengan Parameter ``kategori``.
+
+- Page ``Artikel``
+
+![img1](assets/img/artikel.png)
+<br>
+
+- Page ``Artikel`` dengan ``view cell`` pilihan kategori
+
+![img1](assets/img/pilihkategori.png)
+<br>
+
+- Page ``Artikel`` dengan kategori ``teknologi``
+
+![img1](assets/img/teknologi.png)
+<br>
+
+- Page ``Artikel`` dengan kategori ``hiburan``
+
+![img1](assets/img/hiburan.png)
+<br>
+
+- Page ``Artikel`` dengan kategori ``politik``
+
+![img1](assets/img/politik.png)
+<br>
+
+- Page ``Artikel`` dengan kategori ``pendidikan``
+
+![img1](assets/img/pendidikan.png)
+<br>
+
+- Page ``Home``
+
+![img1](assets/img/home.png)
+<br>
+
+- Page ``About``
+
+![img1](assets/img/about.png)
+<br>
+
+- Page ``Kontak``
+
+![img1](assets/img/kontak.png)
+<br>
 
 <br>
 
