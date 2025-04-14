@@ -1,4 +1,6 @@
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  style="width: 500px; height: auto;" alt="Description"/>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmhmaTQzeTkyM2thcjd1Mnlwa2d5eWp5cTU3Nnk4ZGpnc2RocTdnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lM2TNaYAer3NN4d6eF/giphy.gif"  
+     style="width: 500px; height: auto;" 
+     alt="Gambar Ilustrasi"/>
 
 ### Dini Ramadani | Universitas Pelita Bangsa
 
@@ -15,119 +17,148 @@
 
 <br>
 
+---
 
-# Menampilkan Artikel Berdasarkan Kategori dengan View Cell
+# Tutorial: Membuat View Cell untuk Menampilkan Artikel Berdasarkan Kategori
 
-Berikut adalah penjelasan dan langkah-langkah untuk membuat View Cell menampilkan artikel berdasarkan kategori tertentu:
+Dalam pengembangan aplikasi berbasis PHP dengan framework seperti CodeIgniter, sering kali kita membutuhkan fitur dinamis untuk menampilkan data tertentu berdasarkan kategori yang dipilih oleh pengguna. Dalam tutorial ini, kita akan membahas langkah-langkah untuk membuat **View Cell** yang dapat menampilkan artikel terkini berdasarkan kategori yang diinginkan.
 
-## 1. Tambahkan Parameter `kategori` pada Method `render`
-Pada langkah ini, Anda perlu memperbarui method `render` di dalam class `ArtikelTerkini` agar dapat menerima parameter `kategori`. Parameter ini digunakan untuk memfilter artikel berdasarkan kategori tertentu.
+---
 
-### Contoh Kode:
-```php
-name=app/Cells/ArtikelTerkini.php
+## Pendahuluan
+
+View Cell adalah fitur yang sangat berguna untuk memisahkan logika kecil tertentu dari controller atau view utama. Dalam kasus ini, kita akan menggunakan View Cell untuk menampilkan artikel terkini berdasarkan kategori. Dengan implementasi ini, Anda akan memungkinkan pengguna memilih kategori tertentu melalui dropdown, dan konten artikel akan diperbarui secara dinamis.
+
+---
+
+## Langkah-langkah Implementasi
+
+### 1. Pastikan View Cell Mendukung Parameter Kategori
+
+Langkah pertama adalah memastikan bahwa View Cell Anda mendukung parameter `kategori`. Parameter ini akan digunakan untuk memfilter data artikel yang ditampilkan.
+
+**Contoh Implementasi View Cell:**
+```php name=ArtikelTerkini.php
+<?php
 namespace App\Cells;
 
 use App\Models\ArtikelModel;
 
 class ArtikelTerkini
 {
+    protected $artikelModel;
+    
+    public function __construct()
+    {
+        $this->artikelModel = new ArtikelModel();
+    }
+
     public function render($kategori = null)
     {
-        $model = new ArtikelModel();
-        $query = $model->orderBy('tanggal', 'DESC')->limit(5);
-
-        // Filter berdasarkan kategori jika parameter kategori diberikan
-        if ($kategori) {
-            $query->where('kategori', $kategori);
-        }
-
-        $artikel = $query->findAll();
-        return view('components/artikel_terkini', ['artikel' => $artikel]);
+        $artikel = $this->artikelModel->getArtikelByKategori($kategori);
+        return view('components/artikel_terkini', [
+            'kategori' => $kategori,
+            'artikel' => $artikel,
+        ]);
     }
 }
 ```
 
-### Penjelasan Kode:
-- **`$kategori = null`**:  
-  Parameter ini bersifat opsional. Jika tidak diberikan, semua artikel akan ditampilkan.
-
-- **`$query->where('kategori', $kategori)`**:  
-  Menambahkan filter pada query untuk hanya mengambil artikel dengan kategori tertentu.
-
-- **`$query->orderBy('tanggal', 'DESC')->limit(5)`**:  
-  Mengurutkan artikel berdasarkan tanggal secara menurun (artikel terbaru di atas). Membatasi jumlah artikel yang ditampilkan hingga maksimal 5 artikel.
+Kode di atas menunjukkan bahwa View Cell `ArtikelTerkini` menerima parameter `kategori` dan menggunakannya untuk memproses data artikel.
 
 ---
 
-## 2. Perbarui Pemanggilan View Cell pada Layout
-Pada layout utama (misalnya, `main.php`), tambahkan parameter `kategori` saat memanggil View Cell untuk menentukan kategori artikel yang ingin ditampilkan.
+### 2. Pastikan View Menampilkan Data Berdasarkan Kategori
 
-### Contoh Kode:
-```php
-name=app/Views/layouts/main.php
-<?= view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => 'teknologi']) ?>
-```
+Selanjutnya, pastikan bahwa view yang digunakan oleh View Cell mendukung parameter `kategori`. View ini akan menampilkan data artikel berdasarkan kategori tertentu.
 
-### Penjelasan Kode:
-- **`view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => 'teknologi'])`**:  
-  Memanggil View Cell `ArtikelTerkini` dan menyertakan parameter `kategori` dengan nilai `'teknologi'`.  
-  Hasilnya, hanya artikel dengan kategori `'teknologi'` yang akan ditampilkan.  
-  Anda dapat mengganti `'teknologi'` dengan kategori lain sesuai kebutuhan.
-
----
-
-## 3. Perbarui View `artikel_terkini.php`
-Pada file view (`artikel_terkini.php`), tidak diperlukan banyak perubahan karena fungsinya tetap untuk menampilkan daftar artikel. Pastikan view ini sudah menerima data artikel yang difilter sebelumnya.
-
-### Contoh Kode:
-```php
-name=app/Views/components/artikel_terkini.php
-<?php if (!empty($artikel)): ?>
+**Contoh View:**
+```php name=artikel_terkini.php
+<div class="widget-box">
+    <h3 class="title">Artikel Terkini<?= $kategori ? ' - ' . ucfirst(esc($kategori)) : ''; ?></h3>
     <ul>
-        <?php foreach ($artikel as $item): ?>
-            <li>
-                <a href="<?= site_url('artikel/' . $item['slug']) ?>">
-                    <?= esc($item['judul']) ?>
-                </a>
-                <p><?= date('d M Y', strtotime($item['tanggal'])) ?></p>
-            </li>
-        <?php endforeach; ?>
+        <?php if (!empty($artikel)): ?>
+            <?php foreach ($artikel as $item): ?>
+                <li>
+                    <a href="<?= esc($item['url']); ?>"><?= esc($item['judul']); ?></a>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>Tidak ada artikel untuk kategori ini.</li>
+        <?php endif; ?>
     </ul>
-<?php else: ?>
-    <p>Tidak ada artikel dalam kategori ini.</p>
-<?php endif; ?>
+</div>
 ```
 
-### Penjelasan Kode:
-- **`if (!empty($artikel))`**:  
-  Mengecek apakah ada artikel yang telah difilter.
-
-- **`foreach ($artikel as $item)`**:  
-  Menampilkan daftar artikel yang diterima dari View Cell.
-
-- **`$item['slug']` dan `$item['judul']`**:  
-  Menampilkan slug dan judul artikel.
+Penjelasan:
+- Menampilkan judul artikel terkini sesuai dengan kategori.
+- Jika kategori ada, maka judul akan menampilkan nama kategori.
 
 ---
 
-## Kesimpulan
-1. **Perbarui class `ArtikelTerkini`**:  
-   Tambahkan parameter `kategori` untuk memfilter artikel berdasarkan kategori tertentu.
+### 3. Gunakan View Cell dengan Parameter Kategori
 
-2. **Perbarui layout utama**:  
-   Tambahkan pemanggilan View Cell dengan parameter `kategori`.
+Untuk menampilkan data artikel terkini dengan kategori tertentu, gunakan View Cell di bagian kode yang sesuai.
 
-3. **Gunakan kembali View `artikel_terkini.php`**:  
-   Tidak banyak perubahan, cukup menampilkan artikel yang telah difilter.
+**Contoh Implementasi di Sidebar:**
+```php name=sidebar.php
+<aside id="sidebar">
+    <?= view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => 'teknologi']) ?>
+</aside>
+```
 
-Dengan langkah-langkah di atas, Anda dapat menampilkan artikel berdasarkan kategori tertentu menggunakan View Cell di CodeIgniter.
+Kode di atas memanggil View Cell `ArtikelTerkini` dan menyertakan parameter `kategori` dengan nilai `teknologi`.
+
+---
+
+### 4. Menambahkan Dropdown untuk Memilih Kategori
+
+Jika Anda ingin memberikan opsi kepada pengguna untuk memilih kategori melalui dropdown, ikuti langkah berikut:
+
+**Tambahkan Dropdown di Sidebar:**
+```php name=sidebar.php
+<aside id="sidebar">
+    <form action="" method="get">
+        <select name="kategori" onchange="this.form.submit()" class="form-select">
+            <option value="">Semua Kategori</option>
+            <option value="teknologi" <?= request()->getGet('kategori') === 'teknologi' ? 'selected' : ''; ?>>Teknologi</option>
+            <option value="politik" <?= request()->getGet('kategori') === 'politik' ? 'selected' : ''; ?>>Politik</option>
+            <option value="olahraga" <?= request()->getGet('kategori') === 'olahraga' ? 'selected' : ''; ?>>Olahraga</option>
+        </select>
+    </form>
+</aside>
+```
+
+Penjelasan:
+- Dropdown memungkinkan pengguna memilih kategori.
+- Ketika kategori dipilih, form akan otomatis dikirimkan menggunakan `onchange="this.form.submit()"`.
+- Parameter `kategori` akan diambil dari URL dengan `request()->getGet('kategori')`.
+
+---
+
+### 5. Hasil Akhir
+
+Dengan implementasi ini:
+- Sidebar akan menampilkan dropdown untuk memilih kategori.
+- Setelah kategori dipilih, daftar artikel akan diperbarui sesuai kategori yang dipilih.
+- Jika tidak ada kategori yang dipilih, semua artikel akan ditampilkan.
+
+---
+
+### 6. Catatan Tambahan
+
+- **Validasi Input:** Pastikan bahwa parameter `kategori` yang diterima valid dan sesuai dengan data di database.
+- **Default Kategori:** Jika kategori tidak dipilih, tampilkan semua artikel.
+- **Pagination:** Jika jumlah artikel terlalu banyak, pertimbangkan untuk menambahkan pagination.
+
+---
+
+Dengan langkah-langkah di atas, Anda telah berhasil membuat View Cell yang dinamis untuk menampilkan artikel terkini berdasarkan kategori. Fitur ini akan memberikan pengalaman yang lebih baik bagi pengguna dalam menjelajahi artikel di aplikasi Anda.
+
 <br>
 
-<br>
-
-  <div class="centered">
-    <img src="https://media.giphy.com/media/XLx9jXZXzm8Sv415Tf/giphy.gif?cid=ecf05e47hk6i4tunpqmceczwxjzujix9sxxpbjv2f4woa33v&ep=v1_stickers_search&rid=giphy.gif&ct=s" 
-         style="width: 400px; height: auto;" 
-         alt="Description"/>
-  </div>
+<div class="centered">
+  <img src="https://media.giphy.com/media/XLx9jXZXzm8Sv415Tf/giphy.gif?cid=ecf05e47hk6i4tunpqmceczwxjzujix9sxxpbjv2f4woa33v&ep=v1_stickers_search&rid=giphy.gif&ct=s" 
+       style="width: 400px; height: auto;" 
+       alt="Gambar Ilustrasi Tambahan"/>
+</div>

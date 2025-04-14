@@ -11,6 +11,7 @@ url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400 ;0
 .entry {
     margin: 30px 0;
     padding: 20px;
+    padding-left: 15px;
     background-color: #fdfdfd;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -25,6 +26,7 @@ url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400 ;0
 .entry h2 a {
     color: #1f5faa;
     text-decoration: none;
+    padding-left: 15px;
 }
 
 .entry h2 a:hover {
@@ -37,21 +39,23 @@ url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400 ;0
     height: auto;
     margin-bottom: 15px;
     border-radius: 5px;
+    padding-left: 15px;
 }
 
 .entry p {
     font-size: 16px;
     line-height: 1.6;
     text-align: justify;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding-left: 15px;
 }
 
 .entry small {
     display: block;
     color: #999;
-    font-size: 13px;
+    font-size: 15px;
+    padding-left: 15px;
 }
-
 
 body{ 
 	line-height:1;
@@ -80,10 +84,10 @@ nav{
 	background-color: #1f5faa; 
 }
 nav a {
-	padding: 15px 30px; 
+	padding: 25px 30px; 
 	display: inline-block; 
 	color: #ffffff; 
-	font-size: 14px; 
+	font-size: 16px; 
 	text-decoration: none; 
 	font-weight: bold;
 }
@@ -152,34 +156,91 @@ nav a.active {
     text-align: justify;
 }
 
-
 /* sidebar area */
 #sidebar {
     float: left;
     width: 260px;
     padding: 20px;
+    margin-top: 30px; 
 }
+
+#sidebar form {
+    margin-top: 5px; 
+    margin-bottom: 20px;
+}
+
+#sidebar .form-select {
+    appearance: none; 
+    width: 100%; 
+    padding: 12px 16px; 
+    font-size: 16px; 
+    font-family: 'Arial', sans-serif; 
+    color: #444; 
+    background-color: #ffffff; 
+    border: 2px solid #ddd; 
+    border-radius: 12px;
+    outline: none; 
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+}
+
+#sidebar .form-select:hover {
+    background-color: #f8f8f8; 
+    border-color: #bbb; 
+}
+
+
+#sidebar .form-select:focus {
+    background-color: #ffffff; 
+    border-color: #007bff; 
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); 
+}
+
+#sidebar .form-select::after {
+    content: '▼';
+    position: absolute;
+    right: 16px;
+    pointer-events: none;
+}
+
+#sidebar form select option {
+    padding: 10px; 
+    background-color: #fff;
+    color: #333; 
+}
+
+#sidebar .form-label {
+    font-size: 14px; 
+    color: #555; /* Warna teks label */
+    margin-bottom: 8px;
+    display: block;
+}
+
 
 /* widget */
 .widget-box{
 border:1px solid #eee; 
-margin-top:50px;
+margin-top:10px;
 margin-bottom:20px;
 }
 .widget-box 
 .title{ 
-	padding:10px 16px; 
+	padding:10px 20px; 
 	background-color:#428bca; 
 	color:#fff;
+    font-size: 16px;
 }
 .widget-box ul{ 
 	list-style-type:none;
+    font-size: 16px;
+    padding:10px 10px 10px 10px; 
 }
 .widget-box li{ 
 	border-bottom:1px solid #eee;
 }
 .widget-box li a{ 
-	padding:10px 16px; 
+	padding:10px 10px; 
 	color:#333; 
 	display:block; 
 	text-decoration:none;
@@ -189,15 +250,15 @@ li:hover a{
 	background-color:#eee;
 }
 .widget-box p{ 
-	padding:15px;
-	line-height:25px;
+	padding:5px 5px 5px 10px;
     text-align: justify;
+    font-size: 12px;
 }
 
 .widget-box .tanggal {
     display: block;
-    padding: 0 16px;
-    font-size: 14px;
+    padding: 5px;
+    font-size: 8px;
     color: #999;
     margin-bottom: 10px;
 }

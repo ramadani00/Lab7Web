@@ -1,15 +1,6 @@
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
 
-<form action="<?= base_url('/artikel'); ?>" method="get" class="mb-4">
-    <select name="kategori" class="form-select" onchange="this.form.submit()">
-        <option value="">Semua Kategori</option>
-        <option value="teknologi" <?= $kategori === 'teknologi' ? 'selected' : ''; ?>>Teknologi</option>
-        <option value="politik" <?= $kategori === 'politik' ? 'selected' : ''; ?>>Politik</option>
-        <option value="pendidikan" <?= $kategori === 'pendidikan' ? 'selected' : ''; ?>>Pendidikan</option>
-        <option value="hiburan" <?= $kategori === 'hiburan' ? 'selected' : ''; ?>>Hiburan</option>
-    </select>
-</form>
 
 <?php if ($artikel && count($artikel) > 0): ?>
     <?php foreach ($artikel as $row): ?>
