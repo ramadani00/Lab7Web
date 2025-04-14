@@ -24,7 +24,8 @@ Berikut adalah penjelasan dan langkah-langkah untuk membuat View Cell menampilka
 Pada langkah ini, Anda perlu memperbarui method `render` di dalam class `ArtikelTerkini` agar dapat menerima parameter `kategori`. Parameter ini digunakan untuk memfilter artikel berdasarkan kategori tertentu.
 
 ### Contoh Kode:
-```php name=app/Cells/ArtikelTerkini.php
+```php
+name=app/Cells/ArtikelTerkini.php
 namespace App\Cells;
 
 use App\Models\ArtikelModel;
@@ -63,7 +64,8 @@ class ArtikelTerkini
 Pada layout utama (misalnya, `main.php`), tambahkan parameter `kategori` saat memanggil View Cell untuk menentukan kategori artikel yang ingin ditampilkan.
 
 ### Contoh Kode:
-```php name=app/Views/layouts/main.php
+```php
+name=app/Views/layouts/main.php
 <?= view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => 'teknologi']) ?>
 ```
 
@@ -79,7 +81,8 @@ Pada layout utama (misalnya, `main.php`), tambahkan parameter `kategori` saat me
 Pada file view (`artikel_terkini.php`), tidak diperlukan banyak perubahan karena fungsinya tetap untuk menampilkan daftar artikel. Pastikan view ini sudah menerima data artikel yang difilter sebelumnya.
 
 ### Contoh Kode:
-```php name=app/Views/components/artikel_terkini.php
+```php
+name=app/Views/components/artikel_terkini.php
 <?php if (!empty($artikel)): ?>
     <ul>
         <?php foreach ($artikel as $item): ?>
