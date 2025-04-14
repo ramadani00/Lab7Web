@@ -1,13 +1,17 @@
 <div class="widget-box">
-    <h3 class="title">Artikel Terkini</h3>
+    <h3 class="title">Artikel Terkini<?= $kategori ? ' - ' . ucfirst(esc($kategori)) : ''; ?></h3>
     <ul>
-        <?php foreach ($artikel as $row): ?>
-        <li>
-            <a href="<?= base_url('/artikel/' . $row['slug']) ?>">
-                <?= esc($row['judul']) ?>
-            </a>
-            <span class="tanggal">Diterbitkan pada: <?= date('d M Y', strtotime($row['tanggal'])) ?></span>
-        </li>
-        <?php endforeach; ?>
+        <?php if (!empty($artikel)): ?>
+            <?php foreach ($artikel as $item): ?>
+                <li>
+                    <a href="<?= site_url('artikel/' . $item['slug']) ?>">
+                        <?= esc($item['judul']) ?>
+                    </a>
+                    <p><?= date('d M Y', strtotime($item['tanggal'])) ?></p>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>Tidak ada artikel dalam kategori ini.</p>
+        <?php endif; ?>
     </ul>
 </div>

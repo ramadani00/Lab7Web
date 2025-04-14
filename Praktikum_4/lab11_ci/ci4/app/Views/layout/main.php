@@ -21,7 +21,16 @@
                 <?= $this->renderSection('content') ?>
             </section>
             <aside id="sidebar">
-                <?= view_cell('App\\Cells\\ArtikelTerkini::render') ?>
+                <form action="" method="get">
+                    <select name="kategori" onchange="this.form.submit()" class="form-select">
+                        <option value="">Semua Kategori</option>
+                        <option value="teknologi" <?= request()->getGet('kategori') === 'teknologi' ? 'selected' : ''; ?>>Teknologi</option>
+                        <option value="politik" <?= request()->getGet('kategori') === 'politik' ? 'selected' : ''; ?>>Politik</option>
+                        <option value="pendidikan" <?= request()->getGet('kategori') === 'pendidikan' ? 'selected' : ''; ?>>Pendidikan</option>
+                        <option value="hiburan" <?= request()->getGet('kategori') === 'hiburan' ? 'selected' : ''; ?>>Hiburan</option>
+                    </select>
+                </form>
+                <?= view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => request()->getGet('kategori')]) ?>
             </aside>
         </section>
         <footer>
