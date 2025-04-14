@@ -60,7 +60,7 @@ Database adalah tempat penyimpanan data aplikasi. Tabel artikel dibuat menggunak
 ## Konfigurasi Koneksi Database
 Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan dua acara, yaitu pada ``file app/config/database.php`` atau menggunakan  file ``.env``. File ``.env`` adalah file konfigurasi untuk menyimpan pengaturan seperti nama database, pengguna, dan kata sandi. Menghapus tanda # di depan konfigurasi database akan mengaktifkan pengaturan tersebut.
 
-- Terletak di folder ``ci4``, file `.env`, Hapus tanda `#`.
+- Terletak pada folder ``ci4``, file `.env`, Hapus tanda `#`.
 
 <br>
 
@@ -168,7 +168,7 @@ View adalah bagian yang bertugas menampilkan data kepada pengguna dalam bentuk H
 
 ## Membuat Tampilan Detail Artikel
 Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. 
-- Terletak di folder `app/Controllers`, edit file `Artikel.php`. Tambah method ``view()``.
+- Terletak pada folder `app/Controllers`, edit file `Artikel.php`. Tambah method ``view()``.
   
 ```php
 public function view($slug)
@@ -193,7 +193,7 @@ public function view($slug)
 <br>
 
 ## Membuat View pada Detail
-- Terletak di folder `app/Views/artikel`, buat file `detail.php`.
+- Terletak pada folder `app/Views/artikel`, buat file `detail.php`.
   
 ```php
 <?= $this->include('template/header'); ?>
@@ -213,7 +213,7 @@ public function view($slug)
 <br>
 
 ## Membuat Routing untuk Artikel Detail
-- Terletak di folder `app/Config`, edit file `Routes.php`.
+- Terletak pada folder `app/Config`, edit file `Routes.php`.
   
 ```php
 $routes->get('/artikel/(:any)', 'Artikel::view/$1');
@@ -225,7 +225,7 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 <br>
 
 ## Membuat Menu Admin
-- Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `admin_index()`.
+- Terletak pada folder `app/Controller`, edit file `Artikel.php`. Tambah method `admin_index()`.
   
 ```php
 public function admin_index() 
@@ -338,7 +338,7 @@ public function admin_index()
 <br>
 
 ## Membuat Routing untuk Menu Admin
-- Terletak di folder `app/Config`, edit file `Routes.php`.
+- Terletak pada folder `app/Config`, edit file `Routes.php`.
   
 ![img16](assets/img/routes_admin.png)
 <br>
@@ -351,7 +351,7 @@ public function admin_index()
 <br>
 
 ## Menambah Data untuk Artikel
-- Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `add()`.
+- Terletak pada folder `app/Controller`, edit file `Artikel.php`. Tambah method `add()`.
 
 ```php
 public function add() 
@@ -412,7 +412,7 @@ public function add()
 <br>
 
 ## Mengubah Data pada Artikel
-- Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `edit()`.
+- Terletak pada folder `app/Controller`, edit file `Artikel.php`. Tambah method `edit()`.
 ```php
 public function edit($id) 
     {
@@ -472,7 +472,7 @@ public function edit($id)
 <br>
 
 ## Menghapus Data pada Artikel
-- Terletak di folder `app/Controller`, edit file `Artikel.php`. Tambah method `delete()`.
+- Terletak pada folder `app/Controller`, edit file `Artikel.php`. Tambah method `delete()`.
 ```php
  public function delete($id) 
     {

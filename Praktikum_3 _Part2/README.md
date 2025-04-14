@@ -17,28 +17,21 @@
 
 <br>
 
+Dalam pengembangan aplikasi berbasis PHP dengan framework seperti CodeIgniter, sering kali kita membutuhkan fitur dinamis untuk menampilkan data tertentu berdasarkan kategori yang dipilih oleh pengguna. Dalam praktikum ini, kita akan membahas langkah-langkah untuk membuat ``View Cell`` yang dapat menampilkan artikel terkini berdasarkan kategori yang diinginkan. ``View Cell**`` adalah fitur yang sangat berguna untuk memisahkan logika kecil tertentu dari controller atau view utama. Dalam kasus ini, kita akan menggunakan View Cell untuk menampilkan artikel terkini berdasarkan kategori.
 ---
 
-# Tutorial: Membuat View Cell untuk Menampilkan Artikel Berdasarkan Kategori
-
-Dalam pengembangan aplikasi berbasis PHP dengan framework seperti CodeIgniter, sering kali kita membutuhkan fitur dinamis untuk menampilkan data tertentu berdasarkan kategori yang dipilih oleh pengguna. Dalam tutorial ini, kita akan membahas langkah-langkah untuk membuat **View Cell** yang dapat menampilkan artikel terkini berdasarkan kategori yang diinginkan.
-
----
-
-## Pendahuluan
-
-View Cell adalah fitur yang sangat berguna untuk memisahkan logika kecil tertentu dari controller atau view utama. Dalam kasus ini, kita akan menggunakan View Cell untuk menampilkan artikel terkini berdasarkan kategori. Dengan implementasi ini, Anda akan memungkinkan pengguna memilih kategori tertentu melalui dropdown, dan konten artikel akan diperbarui secara dinamis.
-
----
+<br>
 
 ## Langkah-langkah Implementasi
 
-### 1. Pastikan View Cell Mendukung Parameter Kategori
+### Pastikan View Cell Mendukung Parameter Kategori
 
-Langkah pertama adalah memastikan bahwa View Cell Anda mendukung parameter `kategori`. Parameter ini akan digunakan untuk memfilter data artikel yang ditampilkan.
+Langkah pertama adalah memastikan bahwa ``View Cell`` mendukung parameter ``kategori``. Parameter ini akan digunakan untuk memfilter data artikel yang ditampilkan.
 
-**Contoh Implementasi View Cell:**
-```php name=ArtikelTerkini.php
+- Terletak di folder ``app/Cells``, edit file ``ArtikelTerkini.php``. Tambahkan parameter ``kategori``
+
+```php 
+name=ArtikelTerkini.php
 <?php
 namespace App\Cells;
 
@@ -46,114 +39,81 @@ use App\Models\ArtikelModel;
 
 class ArtikelTerkini
 {
-    protected $artikelModel;
-    
-    public function __construct()
-    {
-        $this->artikelModel = new ArtikelModel();
-    }
-
     public function render($kategori = null)
     {
-        $artikel = $this->artikelModel->getArtikelByKategori($kategori);
+        $model = new ArtikelModel();
+        $query = $model->orderBy('tanggal', 'DESC')->limit(5);
+
+
+        if ($kategori) {
+            $query->where('kategori', $kategori);
+        }
+
+        $artikel = $query->findAll();
+        
         return view('components/artikel_terkini', [
-            'kategori' => $kategori,
             'artikel' => $artikel,
+            'kategori' => $kategori,
         ]);
     }
 }
 ```
+<br>
 
-Kode di atas menunjukkan bahwa View Cell `ArtikelTerkini` menerima parameter `kategori` dan menggunakannya untuk memproses data artikel.
+### Pastikan ``View`` Menampilkan Data Berdasarkan Kategori
 
----
+Selanjutnya, pastikan bahwa ``view`` yang digunakan oleh ``View Cell`` mendukung parameter ``kategori``.
+- Terletak pada folder ``app/Views/components`` ubah file ``artikel_terkini.php``. 
 
-### 2. Pastikan View Menampilkan Data Berdasarkan Kategori
-
-Selanjutnya, pastikan bahwa view yang digunakan oleh View Cell mendukung parameter `kategori`. View ini akan menampilkan data artikel berdasarkan kategori tertentu.
-
-**Contoh View:**
-```php name=artikel_terkini.php
+```php 
 <div class="widget-box">
     <h3 class="title">Artikel Terkini<?= $kategori ? ' - ' . ucfirst(esc($kategori)) : ''; ?></h3>
     <ul>
         <?php if (!empty($artikel)): ?>
             <?php foreach ($artikel as $item): ?>
                 <li>
-                    <a href="<?= esc($item['url']); ?>"><?= esc($item['judul']); ?></a>
+                    <a href="<?= site_url('artikel/' . $item['slug']) ?>">
+                        <?= esc($item['judul']) ?>
+                    </a>
+                    <p><?= date('d M Y', strtotime($item['tanggal'])) ?></p>
                 </li>
             <?php endforeach; ?>
         <?php else: ?>
-            <li>Tidak ada artikel untuk kategori ini.</li>
+            <p>Tidak ada artikel dalam kategori ini.</p>
         <?php endif; ?>
     </ul>
 </div>
 ```
 
-Penjelasan:
-- Menampilkan judul artikel terkini sesuai dengan kategori.
-- Jika kategori ada, maka judul akan menampilkan nama kategori.
+<br>
 
----
+### Menambahkan Dropdown untuk Memilih Kategori
 
-### 3. Gunakan View Cell dengan Parameter Kategori
+- Terletak pada folder ``app/Views/layout``, edit file ``main.php``.
 
-Untuk menampilkan data artikel terkini dengan kategori tertentu, gunakan View Cell di bagian kode yang sesuai.
-
-**Contoh Implementasi di Sidebar:**
-```php name=sidebar.php
-<aside id="sidebar">
-    <?= view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => 'teknologi']) ?>
-</aside>
-```
-
-Kode di atas memanggil View Cell `ArtikelTerkini` dan menyertakan parameter `kategori` dengan nilai `teknologi`.
-
----
-
-### 4. Menambahkan Dropdown untuk Memilih Kategori
-
-Jika Anda ingin memberikan opsi kepada pengguna untuk memilih kategori melalui dropdown, ikuti langkah berikut:
-
-**Tambahkan Dropdown di Sidebar:**
-```php name=sidebar.php
-<aside id="sidebar">
+```php
+<section id="wrapper">
+<section id="main">
+  <?= $this->renderSection('content') ?>
+</section>
+  <aside id="sidebar">
     <form action="" method="get">
-        <select name="kategori" onchange="this.form.submit()" class="form-select">
-            <option value="">Semua Kategori</option>
-            <option value="teknologi" <?= request()->getGet('kategori') === 'teknologi' ? 'selected' : ''; ?>>Teknologi</option>
-            <option value="politik" <?= request()->getGet('kategori') === 'politik' ? 'selected' : ''; ?>>Politik</option>
-            <option value="olahraga" <?= request()->getGet('kategori') === 'olahraga' ? 'selected' : ''; ?>>Olahraga</option>
-        </select>
+      <select name="kategori" onchange="this.form.submit()" class="form-select">
+          <option value="">Semua Kategori</option>
+          <option value="teknologi" <?= request()->getGet('kategori') === 'teknologi' ? 'selected' : ''; ?>>Teknologi</option>
+          <option value="politik" <?= request()->getGet('kategori') === 'politik' ? 'selected' : ''; ?>>Politik</option>
+          <option value="pendidikan" <?= request()->getGet('kategori') === 'pendidikan' ? 'selected' : ''; ?>>Pendidikan</option>
+          <option value="hiburan" <?= request()->getGet('kategori') === 'hiburan' ? 'selected' : ''; ?>>Hiburan</option>
+      </select>
     </form>
-</aside>
+    <?= view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => request()->getGet('kategori')]) ?>
+  </aside>
+</section>
 ```
 
-Penjelasan:
-- Dropdown memungkinkan pengguna memilih kategori.
-- Ketika kategori dipilih, form akan otomatis dikirimkan menggunakan `onchange="this.form.submit()"`.
-- Parameter `kategori` akan diambil dari URL dengan `request()->getGet('kategori')`.
+<br>
 
----
-
-### 5. Hasil Akhir
-
-Dengan implementasi ini:
-- Sidebar akan menampilkan dropdown untuk memilih kategori.
-- Setelah kategori dipilih, daftar artikel akan diperbarui sesuai kategori yang dipilih.
-- Jika tidak ada kategori yang dipilih, semua artikel akan ditampilkan.
-
----
-
-### 6. Catatan Tambahan
-
-- **Validasi Input:** Pastikan bahwa parameter `kategori` yang diterima valid dan sesuai dengan data di database.
-- **Default Kategori:** Jika kategori tidak dipilih, tampilkan semua artikel.
-- **Pagination:** Jika jumlah artikel terlalu banyak, pertimbangkan untuk menambahkan pagination.
-
----
-
-Dengan langkah-langkah di atas, Anda telah berhasil membuat View Cell yang dinamis untuk menampilkan artikel terkini berdasarkan kategori. Fitur ini akan memberikan pengalaman yang lebih baik bagi pengguna dalam menjelajahi artikel di aplikasi Anda.
+### Tampilan ``View Cell`` Dengan Parameter ``kategori``.
 
 <br>
 
