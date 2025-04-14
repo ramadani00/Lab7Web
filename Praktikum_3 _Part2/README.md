@@ -57,6 +57,10 @@ class ArtikelTerkini
     }
 }
 ```
+
+![img1](assets/img/artikelterkini.png)
+<br>
+
 <br>
 
 
@@ -81,6 +85,11 @@ class ArtikelTerkini
     </ul>
 </div>
 ```
+
+<br>
+
+![img2](assets/img/artikel_terkini.png)
+<br>
 
 <br>
 
@@ -110,51 +119,41 @@ class ArtikelTerkini
 
 <br>
 
+![img3](assets/img/dropdown.png)
+<br>
+
+<br>
+
 ### Tampilan ``View Cell`` Dengan Parameter ``kategori``
 
 - Page ``Artikel``
 
-![img1](assets/img/artikel.png)
+![img4](assets/img/artikel.png)
 <br>
 
 - Page ``Artikel`` dengan ``view cell`` pilihan kategori
 
-![img1](assets/img/pilihkategori.png)
+![img5](assets/img/pilihkategori.png)
 <br>
 
 - Page ``Artikel`` dengan kategori ``teknologi``
 
-![img1](assets/img/teknologi.png)
+![img6](assets/img/teknologi.png)
 <br>
 
 - Page ``Artikel`` dengan kategori ``hiburan``
 
-![img1](assets/img/hiburan.png)
+![img7](assets/img/hiburan.png)
 <br>
 
 - Page ``Artikel`` dengan kategori ``politik``
 
-![img1](assets/img/politik.png)
+![img8](assets/img/politik.png)
 <br>
 
 - Page ``Artikel`` dengan kategori ``pendidikan``
 
-![img1](assets/img/pendidikan.png)
-<br>
-
-- Page ``Home``
-
-![img1](assets/img/home.png)
-<br>
-
-- Page ``About``
-
-![img1](assets/img/about.png)
-<br>
-
-- Page ``Kontak``
-
-![img1](assets/img/kontak.png)
+![img9](assets/img/pendidikan.png)
 <br>
 
 <br>
