@@ -10,7 +10,6 @@
 <div class="navbar">
   <h2>📚 Daftar Isi</h2>
   <ul class="toc-list">
-    <li><a href="#menampilkan-post-dengan-kategori">📰 Menampilkan Post dengan Kategori</a></li>
     <li><a href="#pastikan-view-cell-mendukung-parameter-kategori">⚙️ Pastikan View Cell Mendukung Parameter Kategori</a></li>
     <li><a href="#pastikan-view-menampilkan-data-berdasarkan-kategori">🎨 Pastikan View Menampilkan Data Berdasarkan Kategori</a></li>
     <li><a href="#menambahkan-dropdown-untuk-memilih-kategori">⬇️ Menambahkan Dropdown untuk Memilih Kategori</a></li>
