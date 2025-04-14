@@ -9,9 +9,8 @@
 
 <div class="navbar">
   <h2>📚 Daftar Isi</h2>
-  <ul class="toc-list">
-    <li><a href="#pastikan-view-cell-mendukung-parameter-kategori">⚙️ Pastikan View Cell Mendukung Parameter Kategori</a></li>
-    <li><a href="#pastikan-view-menampilkan-data-berdasarkan-kategori">🎨 Pastikan View Menampilkan Data Berdasarkan Kategori</a></li>
+    <ul class="toc-list">
+    <li><a href="#menambahkan-parameter-kategori">⚙️ Menambahkan Parameter Kategori</a></li>
     <li><a href="#menambahkan-dropdown-untuk-memilih-kategori">⬇️ Menambahkan Dropdown untuk Memilih Kategori</a></li>
     <li><a href="#tampilan-view-cell-dengan-parameter-kategori">🔍 Tampilan View Cell Dengan Parameter Kategori</a></li>
   </ul>
@@ -24,9 +23,9 @@ Dalam pengembangan aplikasi berbasis PHP dengan framework seperti CodeIgniter, s
 
 ## Langkah-langkah Implementasi
 
-### Pastikan View Cell Mendukung Parameter Kategori
+### Menambahkan Parameter Kategori
 
-Langkah pertama adalah memastikan bahwa ``View Cell`` mendukung parameter ``kategori``. Parameter ini akan digunakan untuk memfilter data artikel yang ditampilkan.
+Langkah pertama adalah memastikan bahwa View Cell mendukung parameter ``kategori``. Parameter ini akan digunakan untuk memfilter data artikel yang ditampilkan.
 
 - Terletak di folder ``app/Cells``, edit file ``ArtikelTerkini.php``. Tambahkan parameter ``kategori``
 
@@ -60,10 +59,8 @@ class ArtikelTerkini
 ```
 <br>
 
-### Pastikan ``View`` Menampilkan Data Berdasarkan Kategori
 
-Selanjutnya, pastikan bahwa ``view`` yang digunakan oleh ``View Cell`` mendukung parameter ``kategori``.
-- Terletak pada folder ``app/Views/components`` ubah file ``artikel_terkini.php``. 
+- Selanjutmya, terletak pada folder ``app/Views/components`` ubah file ``artikel_terkini.php``. 
 
 ```php 
 <div class="widget-box">
@@ -113,7 +110,7 @@ Selanjutnya, pastikan bahwa ``view`` yang digunakan oleh ``View Cell`` mendukung
 
 <br>
 
-### Tampilan ``View Cell`` Dengan Parameter ``kategori``.
+### Tampilan ``View Cell`` Dengan Parameter ``kategori``
 
 - Page ``Artikel``
 
