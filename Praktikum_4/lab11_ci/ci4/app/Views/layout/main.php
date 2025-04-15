@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title><?= $title ?? 'Halaman Artikel' ?></title>
-    <link rel="stylesheet" href="<?= base_url('/style.css');?>">
+    <link rel="stylesheet" href="<?= base_url('/style.css'); ?>">
 </head>
 <body>
     <div id="container">
         <header>
             <h1>InfoTerkini.id</h1>
         </header>
-        <nav>
-            <a href="<?= base_url('/');?>">Home</a>
-            <a href="<?= base_url('/artikel');?>">Artikel</a>
-            <a href="<?= base_url('/about');?>">About</a>
-            <a href="<?= base_url('/contact');?>">Kontak</a>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="<?= base_url('/'); ?>">Home</a>
+                <a href="<?= base_url('/artikel'); ?>">Artikel</a>
+                <a href="<?= base_url('/about'); ?>">About</a>
+                <a href="<?= base_url('/contact'); ?>">Kontak</a>
+            </div>
+            <div class="navbar-right">
+                <?php if (session()->get('logged_in')): ?>
+                    <a class="btn btn-outline-light" href="<?= base_url('/admin/artikel'); ?>">Admin</a>
+                    <a class="btn btn-outline-danger" href="<?= base_url('/user/logout'); ?>">Logout</a>
+                <?php else: ?>
+                    <a class="btn btn-outline-light" href="<?= base_url('/user/login'); ?>">Admin</a>
+                <?php endif; ?>
+            </div>
         </nav>
         <section id="wrapper">
             <section id="main">

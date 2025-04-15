@@ -8,6 +8,112 @@ url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400 ;0
 	padding: 0; 
 }
 
+
+/*login*/
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#login-wrapper {
+    width: 100%;
+    max-width: 360px;
+    padding: 35px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+#login-wrapper h1 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #444;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.alert {
+    padding: 12px;
+    margin-bottom: 20px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    body {
+        display: block;
+    }
+
+    #login-wrapper {
+        margin: 15px auto;
+        padding: 20px;
+    }
+}
+
+/*entry*/
 .entry {
     margin: 30px 0;
     padding: 20px;
@@ -71,35 +177,120 @@ body{
 
 /* header */
 header{
-    padding: 20px;
+    padding: 30px;
 }
 header h1{
-    margin: 20px 10px;
+    margin: 20px 20px;
     color: #b5b5b5;
 }
 
 /* navigasi */
-nav{
-    display: block;
-	background-color: #1f5faa; 
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f5faa;
+    padding: 25px 45px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Navbar kiri */
+.navbar-left a {
+    margin-right: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-left a:hover {
+    color: #ddd;
+}
+
+/* Navbar kanan (Login Button) */
+.navbar-right .btn {
+    padding: 10px 10px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-right .btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-left {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-left a {
+        margin-bottom: 10px;
+    }
+
+    .navbar-right {
+        margin-top: 15px;
+        width: 100%;
+        text-align: right;
+    }
+}
+
+/* Admin Navbar */
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #1f5faa;
+    padding: 25px 45px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 nav a {
-	padding: 25px 30px; 
-	display: inline-block; 
-	color: #ffffff; 
-	font-size: 16px; 
-	text-decoration: none; 
-	font-weight: bold;
+    margin-right: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-	background-color: #2b83ea;
-	color: #fff;
+    color: #ddd;
 }
 
 nav a.active {
-	background-color: #2b83ea;
-	color: #fff;
+    background-color: #2b83ea;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin-bottom: 10px;
+    }
 }
 
 /* Hero Panel */
