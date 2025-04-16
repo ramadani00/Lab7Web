@@ -44,7 +44,7 @@
 
 
 # Final Result
-<img src="hhttps://drive.google.com/drive/u/1/folders/10lma4js_ubZZ8mp6n9aK8_rTHdWJ0iM_" width="120" height="120" alt="Description"/>
 
+![Hasil Akhir](assets/video/result.gif)
 
 
