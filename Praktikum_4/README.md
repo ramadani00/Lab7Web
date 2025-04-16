@@ -8,21 +8,15 @@
 <div class="navbar">
   <h2>📚 Daftar Isi</h2>
   <ul class="toc-list">
-    <li><a href="#dini-ramadani--universitas-pelita-bangsa">👩‍🎓 Dini Ramadani | Universitas Pelita Bangsa</a></li>
-    <li><a href="#praktikum-4--framework-lanjutan-modul-login">📘 Praktikum 4 | Framework Lanjutan (Modul Login)</a></li>
-    <li><a href="#langkah-langkah-praktikum">🔧 Langkah-langkah Praktikum</a>
-      <ul>
-        <li><a href="#persiapan">📌 Persiapan</a></li>
-        <li><a href="#membuat-model-user">🛠️ Membuat Model User</a></li>
-        <li><a href="#membuat-controller-user">🧑‍💻 Membuat Controller User</a></li>
-        <li><a href="#membuat-view-login">🎨 Membuat View Login</a></li>
-        <li><a href="#membuat-database-seeder">💾 Membuat Database Seeder</a></li>
-        <li><a href="#uji-coba-login">🧪 Uji Coba Login</a></li>
-        <li><a href="#menambahkan-auth-filter">🔒 Menambahkan Auth Filter</a></li>
-        <li><a href="#percobaan-akses-menu-admin">📂 Percobaan Akses Menu Admin</a></li>
-        <li><a href="#fungsi-logout">🚪 Fungsi Logout</a></li>
-      </ul>
-    </li>
+    <li><a href="#persiapan">📌 Persiapan</a></li>
+    <li><a href="#membuat-model-user">🛠️ Membuat Model User</a></li>
+    <li><a href="#membuat-controller-user">🧑‍💻 Membuat Controller User</a></li>
+    <li><a href="#membuat-view-login">🎨 Membuat View Login</a></li>
+    <li><a href="#membuat-database-seeder">💾 Membuat Database Seeder</a></li>
+    <li><a href="#uji-coba-login">🧪 Uji Coba Login</a></li>
+    <li><a href="#menambahkan-auth-filter">🔒 Menambahkan Auth Filter</a></li>
+    <li><a href="#percobaan-akses-menu-admin">📂 Percobaan Akses Menu Admin</a></li>
+    <li><a href="#fungsi-logout">🚪 Fungsi Logout</a></li>
   </ul>
 </div>
 
@@ -44,6 +38,9 @@ CREATE TABLE user (
 );
 ```
 
+![img2](assets/img/table_user.png)
+<br>
+
 <br>
 
 ## Membuat Model User
@@ -62,6 +59,8 @@ class UserModel extends Model
     protected $allowedFields = ['username', 'useremail', 'userpassword'];
 }
 ```
+![img3](assets/img/usermodel.png)
+<br>
 
 <br>
 
@@ -120,6 +119,12 @@ class User extends BaseController
 }
 ```
 
+![img4](assets/img/cu1.png)
+<br>
+
+![img5](assets/img/cu2.png)
+<br>
+
 <br>
 
 ## Membuat View Login
@@ -155,6 +160,9 @@ Buat direktori baru dengan nama ``user`` pada direktori ``app/views``, kemudian 
 </html>
 ```
 
+![img6](assets/img/viewlogin.png)
+<br>
+
 <br>
 
 ## Membuat Database Seeder
@@ -163,6 +171,9 @@ Database seeder digunakan untuk membuat data dummy. Untuk keperluan ujicoba modu
 ```bash
 php spark make:seeder UserSeeder
 ```
+
+![img7](assets/img/dbseeder.png)
+<br>
 
 <br>
 
@@ -187,6 +198,9 @@ class UserSeeder extends Seeder
 }
 ```
 
+![img8](assets/img/seederphp.png)
+<br>
+
 <br>
 
 Selanjutnya buka kembali CLI dan ketik perintah berikut:
@@ -194,12 +208,16 @@ Selanjutnya buka kembali CLI dan ketik perintah berikut:
 php spark db:seed UserSeeder
 ```
 
+![img9](assets/img/userseeder.png)
+<br>
+
+
 <br>
 
 ## Uji Coba Login
 Selanjutnya buka url http://localhost:8080/user/login seperti berikut:
 
-![img1](assets/img/login.png)
+![img10](assets/img/login.png)
 <br>
 
 <br>
@@ -230,6 +248,9 @@ class Auth implements FilterInterface
 }
 ```
 
+![img11](assets/img/authfilterphp.png)
+<br>
+
 <br>
 
 Selanjutnya buka file ``app/Config/Filters.php`` tambahkan kode berikut:
@@ -239,10 +260,13 @@ Selanjutnya buka file ``app/Config/Filters.php`` tambahkan kode berikut:
 ```
 <br>
 
-![img2](assets/img/auth.png)
+![img12](assets/img/auth.png)
 <br>
 
-Selanjutnya buka file ``app/Config/Routes.php`` dan sesuaikan kodenya.
+Selanjutnya buka file ``app/Config/routes.php`` dan sesuaikan kodenya.
+
+![img13](assets/img/routes.png)
+<br>
 
 <br>
 
@@ -251,7 +275,7 @@ Buka url dengan alamat http://localhost:8080/admin/artikel ketika alamat tersebu
 
 <br>
 
-![img2](assets/img/auth.png)
+![img14](assets/img/login.png)
 
 <br>
 
@@ -263,7 +287,11 @@ public function logout()
     session()->destroy();
  return redirect()->to('/user/login');
  }
+
 ```
+![img15](assets/img/logout.png)
+
+<br>
 
 <br>
 
