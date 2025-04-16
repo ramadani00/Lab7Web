@@ -45,6 +45,6 @@
 
 # Final Result
 
-![Hasil Akhir](assets/video/result.MP4)
+![Hasil Akhir](LAB7WEB/assets/video/result.MP4)
 
 
