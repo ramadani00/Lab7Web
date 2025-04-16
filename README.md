@@ -45,6 +45,4 @@
 
 # Final Result
 
-<video width="600" autoplay loop>
-  <source src="assets/video/result.mp4" type="video/mp4">
-</video>
+[![Video Preview](https://via.placeholder.com/600x400.png?text=Video+Preview)](assets/video/result.mp4)
