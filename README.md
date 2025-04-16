@@ -45,4 +45,5 @@
 
 # Final Result
 
-[![Video Preview](https://via.placeholder.com/600x400.png?text=Video+Preview)](https://github.com/ramadani00/Lab7Web/raw/main/assets/video/result.mp4)
+<img src="assets/video/result.gif" width="800" alt="Hasil Akhir">
+
