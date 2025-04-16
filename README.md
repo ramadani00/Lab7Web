@@ -45,6 +45,5 @@
 
 # Final Result
 
-![Hasil Akhir](assets/video/result.gif)
-
+<img src="assets/video/result.gif" width="600" alt="Hasil Akhir">
 
