@@ -45,6 +45,6 @@
 
 # Final Result
 
-![Hasil Akhir](assets/video/result.mp4)
+[![Demo Video](https://img.youtube.com/vi/9gt2YBuEOv4/0.jpg)](https://youtu.be/9gt2YBuEOv4)
 
 
