@@ -45,6 +45,6 @@
 
 # Final Result
 
-![Hasil Akhir](assets/video/result.GIF)
+![Hasil Akhir](assets/video/result.MP4)
 
 
