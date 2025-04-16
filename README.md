@@ -38,7 +38,7 @@
   <tr>
     <td><b>Praktikum 4</b></td>
     <td>Framework Lanjutan (Modul Login)</td>
-    <td><a href="">Klik disini</td>
+    <td><a href="https://github.com/ramadani00/Lab7Web/tree/main/Praktikum_4">Klik disini</td>
   </tr>
 </table>
 <div id="p11">
