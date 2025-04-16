@@ -45,5 +45,6 @@
 
 # Final Result
 
-<img src="assets/video/result.gif" width="600" alt="Hasil Akhir">
-
+<video width="600" loop>
+  <source src="assets/video/result.mp4" type="video/mp4">
+</video>
