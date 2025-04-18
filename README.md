@@ -13,7 +13,8 @@
 
  # DAFTAR TUGAS PRAKTIKUM
 
-## Untuk melihat detail langkah praktikum bisa klik di kolom tabel bagian kanan ➡️
+### Untuk melihat detail langkah praktikum bisa klik di kolom tabel bagian kanan ➡️
+<br>
 
 <table border="2" cellpading="10">
   <tr>
