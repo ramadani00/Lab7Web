@@ -43,6 +43,21 @@
     <td>Framework Lanjutan (Modul Login)</td>
     <td><a href="https://github.com/ramadani00/Lab7Web/tree/main/Praktikum_4">Klik disini</td>
   </tr>
+  <tr>
+    <td><b>Praktikum 5</b></td>
+    <td>Pagination dan Pencarian</td>
+    <td><a href="https://github.com/ramadani00/Lab7Web/tree/main/Praktikum_5">Klik disini</td>
+  </tr>
+  <tr>
+    <td><b>Praktikum 6</b></td>
+    <td>Upload File Gambar</td>
+    <td><a href="">Klik disini</td>
+  </tr>
+   <tr>
+    <td><b>Praktikum 7</b></td>
+    <td>Relasi Tabel dan Query Builder</td>
+    <td><a href="">Klik disini</td>
+  </tr>
 </table>
 <div id="p11">
 
