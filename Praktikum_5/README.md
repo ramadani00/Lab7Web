@@ -114,7 +114,7 @@ Dan pada link pager ubah seperti berikut.
 
 <br>
 
-## Hasi Uji Coba
+## Hasil Uji Coba
 Selanjutnya ujicoba dengan membuka kembali halaman admin artikel, masukkan kata unci tertentu pada form pencarian.
 
 
