@@ -2,6 +2,10 @@
 <?= $this->include('template/admin_header'); ?>
 
 <div class="container mt-4">
+    <form method="get" class="form-search">
+        <input type="text" name="q" value="<?= $q; ?>" placeholder="Cari data">
+        <input type="submit" value="Cari" class="btn btn-primary">
+    </form>
     <table class="table table-hover align-middle" style="table-layout: auto; width: 100%;">
         <thead class="table-primary text-center">
             <tr>
@@ -78,5 +82,5 @@
         </tfoot>
     </table>
 </div>
-<?= $pager->links(); ?>
+<?= $pager->only(['q'])->links(); ?>
 <?= $this->include('template/admin_footer'); ?>

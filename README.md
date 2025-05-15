@@ -61,8 +61,3 @@
 </table>
 <div id="p11">
 
-
-# Final Result
-
-<img src="assets/video/result.gif" width="800" alt="Hasil Akhir">
-

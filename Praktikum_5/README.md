@@ -18,8 +18,6 @@
 
 ## Membuat Pagination
 Pagination merupakan proses yang digunakan untuk membatasi tampilan yang panjang dari data yang banyak pada sebuah website. Fungsi pagination adalah memecah tampilan menjadi beberapa halaman tergantung banyaknya data yang akan ditampilkan pada setiap halaman. Pada Codeigniter 4, fungsi pagination sudah tersedia pada Library sehingga cukup mudah menggunakannya.
-
-<br>
 Untuk membuat pagination, buka Kembali ``Controller Artikel``, kemudian modifikasi kode pada method ``admin_index`` seperti berikut.
 
 ```php
@@ -63,10 +61,23 @@ Selanjutnya buka kembali menu daftar artikel, tambahkan data lagi untuk melihat 
 Pencarian data digunakan untuk memfilter data. Untuk membuat pencarian data, buka kembali ``Controller Artikel``, pada method ``admin_index`` ubah kodenya seperti berikut
 
 ```php
+    public function admin_index()
+    {
+        $title = 'Daftar Artikel';
+        $q = $this->request->getVar('q') ?? '';
+        $model = new ArtikelModel();
+        $data = [
+            'title' => $title,
+            'q' => $q,
+            'artikel' => $model->like('judul', $q)->paginate(10),
+            'pager' => $model->pager,
+        ];
 
+        return view('artikel/admin_index', $data);
+    }
 ```
 
-![img4](assets/img/.png)
+![img4](assets/img/admin_index.png)
 <br>
 
 <br>
@@ -74,10 +85,13 @@ Pencarian data digunakan untuk memfilter data. Untuk membuat pencarian data, buk
 Kemudian buka kembali file ``views/artikel/admin_index.php`` dan tambahkan form pencarian sebelum deklarasi tabel seperti berikut:
 
 ```php
-
+<form method="get" class="form-search">
+  <input type="text" name="q" value="<?= $q; ?>" placeholder="Cari data">
+  <input type="submit" value="Cari" class="btn btn-primary">
+</form>
 ```
 
-![img5](assets/img/.png)
+![img5](assets/img/search.png)
 <br>
 
 <br>
@@ -88,7 +102,7 @@ Dan pada link pager ubah seperti berikut.
 <?= $pager->only(['q'])->links(); ?>
 ```
 
-![img6](assets/img/.png)
+![img6](assets/img/pager.png)
 <br>
 
 
@@ -97,9 +111,12 @@ Dan pada link pager ubah seperti berikut.
 Selanjutnya ujicoba dengan membuka kembali halaman admin artikel, masukkan kata unci tertentu pada form pencarian.
 
 
-![img7](assets/img/.png)
+![img7](assets/img/ujicoba.png)
 <br>
 
+<br>
+
+![img7](assets/img/ujicobasearch.png)
 <br>
 
 <br>

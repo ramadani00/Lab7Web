@@ -43,10 +43,12 @@ class Artikel extends BaseController
     public function admin_index()
     {
         $title = 'Daftar Artikel';
+        $q = $this->request->getVar('q') ?? '';
         $model = new ArtikelModel();
         $data = [
             'title' => $title,
-            'artikel' => $model->paginate(10),
+            'q' => $q,
+            'artikel' => $model->like('judul', $q)->paginate(10),
             'pager' => $model->pager,
         ];
 
