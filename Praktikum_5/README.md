@@ -2,7 +2,7 @@
 
 ### Dini Ramadani | Universitas Pelita Bangsa
 
-<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 4 | Framework Lanjutan (Modul Login)</h1>
+<h1 style="color: blue; font-size: 36px; text-align: center;">Praktikum 5 | Pagination Dan Pencarian</h1>
 <br>
 
 <div class="navbar">
