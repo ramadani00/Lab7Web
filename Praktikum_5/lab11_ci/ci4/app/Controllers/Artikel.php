@@ -13,8 +13,8 @@ class Artikel extends BaseController
         $kategori = $this->request->getGet('kategori');
 
         $artikel = $kategori
-            ? $model->where('kategori', $kategori)->findAll()
-            : $model->findAll();
+            ? $model->where('kategori', $kategori)->orderBy('tanggal', 'DESC')->findAll()
+            : $model->orderBy('tanggal', 'DESC')->findAll();
 
         $data = [
             'artikel' => $artikel,
@@ -44,9 +44,13 @@ class Artikel extends BaseController
     {
         $title = 'Daftar Artikel';
         $model = new ArtikelModel();
-        $artikel = $model->findAll();
+        $data = [
+            'title' => $title,
+            'artikel' => $model->paginate(10),
+            'pager' => $model->pager,
+        ];
 
-        return view('artikel/admin_index', compact('artikel', 'title'));
+        return view('artikel/admin_index', $data);
     }
 
     public function add() 
@@ -113,7 +117,7 @@ class Artikel extends BaseController
     public function terkini()
     {
         $model = new ArtikelModel();
-        $artikel = $model->orderBy('tanggal', 'DESC')->findAll(5);
+        $artikel = $model->orderBy('tanggal', 'DESC')->findAll(15);
         $title = 'Artikel Terkini';
 
         return view('artikel/terkini', compact('artikel', 'title'));

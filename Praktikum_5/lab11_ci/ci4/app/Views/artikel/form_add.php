@@ -31,7 +31,7 @@
             </select>
         </div>
 
-        <button type="submit" name="upload" class="btn btn-primary">Kirim</button>
+        <button type="submit" name="upload" class="btn btn-primary" style="margin-bottom: 75px; margin-top: 20px;">Kirim</button>
     </form>
 </div>
 

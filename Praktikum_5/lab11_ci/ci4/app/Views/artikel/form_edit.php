@@ -5,7 +5,6 @@
 
     <form action="" method="post" enctype="multipart/form-data">
         <?= csrf_field() ?>
-
         <div class="mb-3">
             <label for="judul" class="form-label">Judul Artikel</label>
             <input type="text" name="judul" id="judul" class="form-control" value="<?= esc($data['judul']); ?>" required>
@@ -29,7 +28,7 @@
                 <option value="hiburan" <?= (old('kategori') ?? $data['kategori'] ?? '') == 'hiburan' ? 'selected' : ''; ?>>Hiburan</option>
         </select>
         </div>
-        <button type="submit" class="btn btn-primary">Kirim</button>
+        <button type="submit" class="btn btn-primary" style="margin-bottom: 75px; margin-top: 20px;">Kirim</button>
     </form>
 </div>
 

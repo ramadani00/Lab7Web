@@ -8,7 +8,7 @@ class ArtikelTerkini
     public function render($kategori = null)
     {
         $model = new ArtikelModel();
-        $query = $model->orderBy('tanggal', 'DESC')->limit(5);
+        $query = $model->orderBy('tanggal', 'DESC')->limit(15);
 
 
         if ($kategori) {

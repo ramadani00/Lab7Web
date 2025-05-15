@@ -9,12 +9,10 @@
     <body>
         <div id="container">
             <header>
-                <h1>Admin Portal Berita</h1>
+                <h1>Admin InfoTerkini.id</h1>
             </header>
             <nav>
                 <a href="<?= base_url('/admin/artikel');?>">Dashboard</a>
                 <a href="<?= base_url('/artikel');?>">Artikel</a>
                 <a href="<?= base_url('/admin/artikel/add');?>">Tambah Artikel</a>
             </nav>
-            <section id="wrapper">
-                <section id="main">

@@ -9,7 +9,6 @@ url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400 ;0
 }
 
 
-/*login*/
 html, body {
     margin: 0;
     padding: 0;
@@ -26,12 +25,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 0;
 }
 
+/*login*/
 #login-wrapper {
+    margin: 240px;
     width: 100%;
-    max-width: 360px;
+    max-width: 480px;
     padding: 35px;
     background: #fff;
     border-radius: 12px;
@@ -115,9 +116,8 @@ button:hover {
 
 /*entry*/
 .entry {
-    margin: 30px 0;
-    padding: 20px;
-    padding-left: 15px;
+    margin: 50px 50px;
+    padding: 60px 30px 50px 30px;
     background-color: #fdfdfd;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -126,18 +126,25 @@ button:hover {
 
 .entry h2 {
     font-size: 22px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    padding-left: 10px;
 }
 
 .entry h2 a {
     color: #1f5faa;
     text-decoration: none;
-    padding-left: 15px;
+    padding-left: 10px;
 }
 
 .entry h2 a:hover {
     color: #2b83ea;
     text-decoration: underline;
+}
+
+.entry h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 20px;
 }
 
 .entry img {
@@ -153,7 +160,8 @@ button:hover {
     line-height: 1.6;
     text-align: justify;
     margin-bottom: 15px;
-    padding-left: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .entry small {
@@ -163,24 +171,23 @@ button:hover {
     padding-left: 15px;
 }
 
-body{ 
-	line-height:1;
-	font-size:100%;
-	font-family:'Open Sans', sans-serif; 
-	color:#5a5a5a;
-}
+
 #container{
-    width: 980px;
-    margin: 0 auto;
+    width: 1440px;
+    margin: 0;
 	box-shadow: 0 0 1em #cccccc; 
 }
 
 /* header */
-header{
+header {
     padding: 30px;
+    margin: 0; 
+    background-color: #005792;
+    text-align: center;
 }
 header h1{
-    margin: 20px 20px;
+    margin: 15px 15px;
+    padding-left: 20px;
     color: #b5b5b5;
 }
 
@@ -191,27 +198,31 @@ header h1{
     justify-content: space-between;
     align-items: center;
     background-color: #1f5faa;
-    padding: 25px 45px;
+    padding: 30px 75px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Navbar kiri */
 .navbar-left a {
-    margin-right: 30px;
+    padding: 15px 10px 15px 10px;
+    margin: 15px 10px 15px 10px;
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
-    transition: color 0.3s;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar-left a:hover {
-    color: #ddd;
+    background-color: #007bff;
+    color: white;
 }
 
 /* Navbar kanan (Login Button) */
 .navbar-right .btn {
-    padding: 10px 10px;
+    padding: 10px 50px;
     margin: 5px;
     background-color: #007bff;
     color: white;
@@ -257,21 +268,25 @@ nav {
     justify-content: flex-start;
     align-items: center;
     background-color: #1f5faa;
-    padding: 25px 45px;
+    padding: 25px 75px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
-    margin-right: 25px;
+    padding: 5px 10px;
+    margin: 5px;
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-    transition: color 0.3s;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-    color: #ddd;
+    background-color: #007bff;
+    color: white;
 }
 
 nav a.active {
@@ -302,6 +317,7 @@ nav a.active {
 #hero h1{ 
 	margin-bottom: 20px; 
 	font-size: 35px;
+    margin-top: 0;
 }
 #hero p{ 
 	margin-bottom: 20px; 
@@ -311,25 +327,25 @@ nav a.active {
 
 /* main content */
 #wrapper {
-    margin: 0;
+    margin: 40px;
 }
 
 #main {
     float: left;
-    width: 640px;
-    padding: 40px 30px 40px 30px;
+    width: 980px;
+    padding: 30px 30px;
     box-sizing: border-box
 }
 
 /* content */
 .content-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px;
+    max-width: auto;
+    margin: auto;
+    padding: 40px 40px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     line-height: 1.8;
     color: #333;
 }
@@ -350,14 +366,13 @@ nav a.active {
 /* sidebar area */
 #sidebar {
     float: left;
-    width: 260px;
+    width: 330px;
     padding: 20px;
-    margin-top: 30px; 
+    margin-top: 10px; 
 }
 
 #sidebar form {
-    margin-top: 5px; 
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #sidebar .form-select {
@@ -411,7 +426,7 @@ nav a.active {
 
 /* widget */
 .widget-box{
-border:1px solid #eee; 
+border:1px solid #e1e0e0; 
 margin-top:10px;
 margin-bottom:20px;
 }
@@ -428,7 +443,7 @@ margin-bottom:20px;
     padding:10px 10px 10px 10px; 
 }
 .widget-box li{ 
-	border-bottom:1px solid #eee;
+	border-bottom:1px solid #e1e0e0;
 }
 .widget-box li a{ 
 	padding:10px 10px; 
@@ -438,7 +453,7 @@ margin-bottom:20px;
 }
 .widget-box 
 li:hover a{ 
-	background-color:#eee;
+	background-color:#e1e0e0;
 }
 .widget-box p{ 
 	padding:5px 5px 5px 10px;
@@ -594,7 +609,7 @@ input[type="button"].kontak-btn-block {
 	text-align:center; 
 }
 .box h3 {
-	margin: 15px 0;
+	margin: 0;
 }
 .box p {
 	line-height: 20px; 
@@ -609,10 +624,8 @@ input[type="button"].kontak-btn-block {
 	border-radius: 50%;
 }
 .row {
-	margin: 0 -10px;
+	margin: 0;
 	box-sizing: border-box; 
-	-moz-box-sizing: border-box; 
-	-webkit-box-sizing: border-box;
 }
 .row:after, 
 .row:before, 
@@ -633,7 +646,7 @@ border-top:1px solid #eeeeee;
 
 /* entry */
 .entry {
-	margin: 15px 0;
+	margin: 0;
 }
 .entry h2 { 
 	margin-bottom: 20px;
@@ -648,4 +661,53 @@ border-top:1px solid #eeeeee;
 }
 .entry .right-img { 
 	float: right;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0; 
+    margin: 0; 
+    background: none;
+    border: none; 
+    box-shadow: none;
+    margin: 0 0 0 25px;
+}
+
+.pagination li {
+    margin: 0;
+}
+
+.pagination li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.pagination li a:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.pagination li.active a {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    pointer-events: none;
+}
+
+.pagination li.disabled a {
+    color: #ccc;
+    background-color: #f8f9fa;
+    border-color: #ddd;
+    pointer-events: none;
 }

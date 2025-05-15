@@ -1,5 +1,3 @@
-                </section>
-            </section>
             <footer>
                 <p>&copy; 2025 - Universitas Pelita Bangsa</p>
             </footer>

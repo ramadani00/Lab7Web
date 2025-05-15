@@ -7,5 +7,4 @@
     <hr><br>
     <p><?= nl2br(esc($content)); ?></p>
 </div>
-
 <?= $this->endSection() ?>

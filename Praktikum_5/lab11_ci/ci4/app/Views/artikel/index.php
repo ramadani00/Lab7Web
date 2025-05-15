@@ -1,7 +1,6 @@
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
 
-
 <?php if ($artikel && count($artikel) > 0): ?>
     <?php foreach ($artikel as $row): ?>
         <article class="entry mb-4">

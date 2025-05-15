@@ -5,11 +5,11 @@
     <table class="table table-hover align-middle" style="table-layout: auto; width: 100%;">
         <thead class="table-primary text-center">
             <tr>
-                <th style="width: 5%;">ID</th>
-                <th style="width: 40%;">Judul & Isi</th>
+                <th style="width: 10%;">ID</th>
+                <th style="width: 50%;">Judul & Isi</th>
                 <th style="width: 10%;">Kategori</th>
-                <th style="width: 5%;">Status</th>
-                <th style="width: 40%;">Aksi</th>
+                <th style="width: 10%;">Status</th>
+                <th style="width: 20%;">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -50,7 +50,7 @@
                             <?php endif; ?>
                         </td>
                         <td class="text-center">
-                            <a href="<?= base_url('/admin/artikel/edit/' . $row['id']); ?>" class="btn btn-sm btn-warning me-1"   style="margin-bottom: 10px;">
+                            <a href="<?= base_url('/admin/artikel/edit/' . $row['id']); ?>" class="btn btn-sm btn-warning me-1">
                                 <i class="bi bi-pencil-fill"></i> Ubah
                             </a>
                             <a href="<?= base_url('/admin/artikel/delete/' . $row['id']); ?>" 
@@ -69,14 +69,14 @@
         </tbody>
         <tfoot class="table-light text-center">
             <tr>
-            <th style="width: 5%;">ID</th>
-                <th style="width: 40%;">Judul & Isi</th>
+            <th style="width: 10%;">ID</th>
+                <th style="width: 50%;">Judul & Isi</th>
                 <th style="width: 10%;">Kategori</th>
-                <th style="width: 5%;">Status</th>
-                <th style="width: 40%;">Aksi</th>
+                <th style="width: 10%;">Status</th>
+                <th style="width: 20%;">Aksi</th>
             </tr>
         </tfoot>
     </table>
 </div>
-
+<?= $pager->links(); ?>
 <?= $this->include('template/admin_footer'); ?>
