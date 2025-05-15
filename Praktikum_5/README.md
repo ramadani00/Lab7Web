@@ -115,7 +115,7 @@ Dan pada link pager ubah seperti berikut.
 <br>
 
 ## Hasil Uji Coba
-Selanjutnya ujicoba dengan membuka kembali halaman admin artikel, masukkan kata unci tertentu pada form pencarian.
+Selanjutnya ujicoba dengan membuka kembali halaman admin artikel, masukkan kata kunci tertentu pada form pencarian.
 
 
 ![img7](assets/img/ujicoba.png)
